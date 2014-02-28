@@ -3,19 +3,23 @@ package org.cauli.junit;
 
 
 import org.apache.log4j.Logger;
+import org.cauli.junit.anno.InterceptorClass;
 import org.cauli.junit.anno.ThreadRunner;
+import org.cauli.junit.statement.Interceptor;
+import org.cauli.junit.statement.InterceptorStatement;
 import org.junit.internal.AssumptionViolatedException;
 import org.junit.internal.runners.model.EachTestNotifier;
+import org.junit.rules.RunRules;
+import org.junit.rules.TestRule;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runner.notification.StoppedByUserException;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.InitializationError;
 import org.junit.runners.model.RunnerScheduler;
 import org.junit.runners.model.Statement;
-
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
-import java.util.Set;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -86,29 +90,15 @@ public class JUnitBaseRunner extends Feeder{
                 e.printStackTrace();
             }
         }
-        return statement;
+        return new RunRules(statement,getRules(),getDescription());
     }
-    
+
+
+    private List<TestRule> getRules(){
+        return null;
+    }
+
     public void run(RunNotifier runNotifier){
-        Set<Class<?>> cls = ClassPool.getClassPool();
-        //PageManager.collectPageInfomation();
-        for(Class<?>clazz : cls){
-            if(clazz.isAnnotationPresent(Register.class)){
-                try {
-                    ActionListenerProxy.register(clazz);
-                    logger.info("扫描到了动作级别的监听器"+clazz.getName());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }else if(clazz.isAnnotationPresent(Register.class)){
-            	try{
-            		ActionListenerProxy.register(clazz);
-            		logger.info("扫描到了动作级别的监听器"+clazz.getName());
-            	}catch(Exception e){
-            		e.printStackTrace();
-            	}
-            }
-        }
         EachTestNotifier testNotifier= new EachTestNotifier(runNotifier,
 				getDescription());
 		try {

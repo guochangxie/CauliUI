@@ -40,7 +40,6 @@ public interface IElement {
     public boolean isExist();
     public boolean isDisplay();
     public boolean isEnable();
-    //public boolean isEditable();
     public boolean isSelected();
     public void dragAndDrop(IElement element);
     public void dragAndDrop(Point point);

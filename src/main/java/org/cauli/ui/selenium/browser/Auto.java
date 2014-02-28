@@ -1,10 +1,11 @@
 package org.cauli.ui.selenium.browser;
 
 
+import org.cauli.ui.selenium.element.IElement;
+import org.cauli.ui.selenium.page.ICurrentPage;
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashSet;
@@ -40,14 +41,14 @@ public class Auto {
 
     public static void require(Browser browser){
         BrowserManager browserManager=new BrowserManager();
-        browserManager.setBrowser(new BaseBrowser(browser));
+        browserManager.setBrowser(new Browser(browser));
         local.set(browserManager);
 
     }
     public static void require(Browser browser,String url){
         BrowserManager browserManager=new BrowserManager();
         try {
-            browserManager.setBrowser(new BaseBrowser(browser,new URL(url)));
+            browserManager.setBrowser(new Browser(browser,new URL(url)));
         } catch (MalformedURLException e) {
             logger.error("没有连接到远程节点的服务器，远程浏览器引用失败！请检查环境配置是否正确！");
             throw new RuntimeException("没有连接到远程节点的服务器，远程浏览器引用失败！请检查环境配置是否正确",e);
@@ -68,7 +69,7 @@ public class Auto {
     public static IBrowser browser(){
         return local.get().getBrowser();
     }
-    public static ICurrentPage open(String url){
+    public static ICurrentPage go(String url){
         return browser().open(url);
     }
     public static IElement $(String jquery){
@@ -152,70 +153,12 @@ public class Auto {
         browser().setClosed(isClosed());
     }
 
-    public static class Firefox extends Auto {
-        public static ICurrentPage open(String url){
-            require(Browser.FIREFOX);
-            return Auto.open(url);
-        }
-    }
-
-    public static class Chrome extends Auto {
-        public static ICurrentPage open(String url){
-            require(Browser.CHROME);
-            return Auto.open(url);
-        }
-    }
-
     public static void clearBrowserManager(){
         browserSet.get().clear();
     }
 
     public static boolean remove(Browser browser){
         return browserSet.get().remove(browser);
-    }
-
-    public static class HtmlUnit extends Auto {
-        public static ICurrentPage open(String url){
-            require(Browser.HTMLUNIT);
-            return Auto.open(url);
-        }
-    }
-
-    public static class Safari extends Auto {
-        public static ICurrentPage open(String url){
-            require(Browser.SAFARI);
-            return Auto.open(url);
-        }
-    }
-
-    public static class Opera extends Auto {
-        public static ICurrentPage open(String url){
-            require(Browser.OPERA);
-            return Auto.open(url);
-        }
-    }
-
-    public static class IE extends Auto {
-        public static ICurrentPage open(String url){
-            require(Browser.IE);
-            return Auto.open(url);
-        }
-    }
-
-    public static class Http extends Auto{
-
-        public static void require(Browser browser){
-            if(!browser.toString().toLowerCase().contains("htmlunit")){
-                throw new RuntimeException("错误的HTTP浏览器类型");
-            }
-            Auto.require(browser);
-        }
-    }
-    public static class PhantomJS extends Auto{
-        public static ICurrentPage open(String url){
-            require(Browser.PHANTOMJS);
-            return Auto.open(url);
-        }
     }
 
 	@SuppressWarnings("unchecked")

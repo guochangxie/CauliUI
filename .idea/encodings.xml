@@ -3,9 +3,9 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/jquery/jquery.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/Auto.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/BaseBrowser.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/Browser.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/BrowserManager.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/Engine.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/IBrowser.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/RemoteBrowser.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/WindowInfo.java" charset="UTF-8" />
@@ -21,7 +21,6 @@
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/Image.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/JSoupElement.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/Link.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/Locator.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/RadioButton.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/RichTextField.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/Select.java" charset="UTF-8" />
@@ -29,12 +28,10 @@
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/TempElement.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/listener/ActionListener.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/listener/ActionListenerProxy.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/listener/RunnerListenerProxy.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/listener/WindowSourceListener.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/page/CurrentPage.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/page/ICurrentPage.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/page/IPage.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/page/PageResponse.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/page/SourcePage.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/source/XMLParse.java" charset="UTF-8" />
   </component>

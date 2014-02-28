@@ -1,9 +1,9 @@
 package org.cauli.ui.selenium.element;
 
-import com.auto.ui.browser.IBrowser;
-import com.auto.ui.listener.ActionListenerProxy;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
+import org.cauli.ui.selenium.browser.IBrowser;
+import org.cauli.ui.selenium.listener.ActionListenerProxy;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;

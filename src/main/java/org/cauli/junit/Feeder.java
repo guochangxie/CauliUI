@@ -20,9 +20,8 @@
  */
 
 package org.cauli.junit;
-
-import com.auto.junit.anno.Pict;
-import com.auto.junit.scheduler.DefaultFeedScheduler;
+import org.cauli.junit.anno.Param;
+import org.cauli.junit.scheduler.DefaultFeedScheduler;
 import org.databene.benerator.Generator;
 import org.databene.benerator.anno.AnnotationMapper;
 import org.databene.benerator.anno.ThreadPoolSize;
@@ -50,11 +49,6 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * JUnit {@link org.junit.runner.Runner} implementation that enhances {@link org.junit.runners.BlockJUnit4ClassRunner}
- * with parameterized tests.<br/><br/>
- * Created: 07.05.2010 19:56:52
- * @since 0.6.2
- * @author Volker Bergmann
  */
 public class Feeder extends BlockJUnit4ClassRunner {
 
@@ -122,19 +116,19 @@ public class Feeder extends BlockJUnit4ClassRunner {
 					children.add(method);
 					continue;
 				} else if(method.getMethod().isAnnotationPresent(Param.class)){
-                    Pict pict = method.getAnnotation(Pict.class);
+                    Param pict = method.getAnnotation(Param.class);
                     String path = pict.value();
-                    PictToMethod pictToMethod = new PictToMethod(path);
-                    List<FrameworkMethodWithParameters> pictTestMethods=pictToMethod.generatorPICTMethod(method.getMethod());
-                    children.addAll(pictTestMethods);
+                    ParameterGenerator generator = new ParameterGenerator(path);
+                    List<FrameworkMethod> methods=generator.generator(method);
+                    children.addAll(methods);
                 }else{
-                        // parameterized Feed4JUnit generator method
-                        BeneratorContext context = getContext();
-                        context.setGeneratorFactory(config.createDefaultGeneratorFactory());
-                        annotationMapper.parseClassAnnotations(testClass.getAnnotations(), context);
-                        List<? extends FrameworkMethod> parameterizedTestMethods;
-                        parameterizedTestMethods = computeParameterizedTestMethods(method.getMethod(), context);
-                        children.addAll(parameterizedTestMethods);
+                    // parameterized Feed4JUnit generator method
+                    BeneratorContext context = getContext();
+                    context.setGeneratorFactory(config.createDefaultGeneratorFactory());
+                    annotationMapper.parseClassAnnotations(testClass.getAnnotations(), context);
+                    List<? extends FrameworkMethod> parameterizedTestMethods;
+                    parameterizedTestMethods = computeParameterizedTestMethods(method.getMethod(), context);
+                    children.addAll(parameterizedTestMethods);
                 }
 			}
 		}
@@ -219,8 +213,6 @@ public class Feeder extends BlockJUnit4ClassRunner {
 					generatedParams[i] = Entity2JavaConverter.convertAny(generatedParams[i]);
 					generatedParams[i] = AnyConverter.convert(generatedParams[i], parameterTypes[i]);
 				}
-				// generated params may be to few, e.g. if an XLS row was imported with trailing nulls, 
-				// so create an array of appropriate size
 				Object[] usedParams = new Object[parameterTypes.length];
 				System.arraycopy(generatedParams, 0, usedParams, 0, Math.min(generatedParams.length, usedParams.length));
 				String info = infoProvider.testInfo(method, usedParams);
