@@ -17,9 +17,9 @@ import java.util.Set;
 public class Auto {
 
     private static Object page;
-    public static ThreadLocal<Set<Browser>> browserSet=new ThreadLocal<Set<Browser>>(){
-        public Set<Browser> initialValue(){
-            return new HashSet<Browser>();
+    public static ThreadLocal<Set<Engine>> browserSet=new ThreadLocal<Set<Engine>>(){
+        public Set<Engine> initialValue(){
+            return new HashSet<Engine>();
         }
     };
     private static Logger logger = LoggerFactory.getLogger(Auto.class);
@@ -28,24 +28,24 @@ public class Auto {
             return new BrowserManager();
         }
     };
-    public static void require(Browser[] browsers){
-        for(Browser browser:browsers){
+    public static void require(Engine[] browsers){
+        for(Engine browser:browsers){
             browserSet.get().add(browser);
         }
     }
 
     public static void require(String value){
-        Browser b=Enum.valueOf(Browser.class,value.toUpperCase().trim());
+        Engine b=Enum.valueOf(Engine.class,value.toUpperCase().trim());
         require(b);
     }
 
-    public static void require(Browser browser){
+    public static void require(Engine browser){
         BrowserManager browserManager=new BrowserManager();
         browserManager.setBrowser(new Browser(browser));
         local.set(browserManager);
 
     }
-    public static void require(Browser browser,String url){
+    public static void require(Engine browser,String url){
         BrowserManager browserManager=new BrowserManager();
         try {
             browserManager.setBrowser(new Browser(browser,new URL(url)));
@@ -56,7 +56,7 @@ public class Auto {
         local.set(browserManager);
     }
     
-    public static void requireRemote(Browser browser,String url){
+    public static void requireRemote(Engine browser,String url){
     	BrowserManager browserManager=new BrowserManager();
         try {
             browserManager.setBrowser(new RemoteBrowser(browser,new URL(url)));
@@ -80,7 +80,7 @@ public class Auto {
         browser().maxWindow();
     }
 
-    public static void closeAllWindows(){
+    public static void quit(){
         browser().closeAllWindows();
     }
 

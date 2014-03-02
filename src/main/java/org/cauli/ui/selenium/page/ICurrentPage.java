@@ -1,6 +1,8 @@
 package org.cauli.ui.selenium.page;
 
 
+import org.cauli.ui.selenium.browser.IBrowser;
+import org.cauli.ui.selenium.element.IElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -18,17 +20,15 @@ public interface ICurrentPage extends IPage {
 
     public void open(String url);
 
-    public IElement element();
+    public <T>T find(Class<T> clazz, String location);
+    
+    public <T>T find(Class<T> clazz);
+
+    public IElement find(String location);
 
     public IElement element(String id);
 
-    public IElement element(By by);
-
-    public IElement element(By by, Integer index);
-
-    public <T>T element(Class<T> clazz, String id);
-    
-    public <T>T element(Class<T> clazz);
+    public <T>T element(Class<T> clazz,String id);
 
     public void assertAlert();
 
@@ -38,19 +38,7 @@ public interface ICurrentPage extends IPage {
 
     public void assertTextPresent(String text);
 
-    public Map<String, String> getHeaders() ;
-
-    public List<String> getJavaScriptURL();
-
-    public String getHeaderByName(String name);
-
     public String getPageSource();
-
-    public Integer getStatusCode();
-
-    public List<String> getAllCssURLByLinked();
-
-    public boolean isGzip();
 
     public String dealAlert();
 
@@ -83,14 +71,6 @@ public interface ICurrentPage extends IPage {
     public ICurrentPage frame(By by, int index);
     
     public IElement $(String jquery);
-    
-    public Table table(String id);
-    
-    public Select select(String id);
-
-    public Select select(By by);
-
-    public Table table(By by);
 
 	void keypress(Keys key);
 

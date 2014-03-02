@@ -1,7 +1,6 @@
 package org.cauli.ui.selenium.browser;
 
-
-import com.auto.ui.page.ICurrentPage;
+import org.cauli.ui.selenium.page.ICurrentPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -10,7 +9,7 @@ import java.util.Set;
 
 /**
  * @author tianqing.wang
- * @param <T>
+ * @param
  */
 public interface IBrowser {
 	
@@ -18,7 +17,7 @@ public interface IBrowser {
 	
 	public void elementLoadTimeout(int seconds);
 	
-    public com.auto.ui.page.ICurrentPage open(String url);
+    public ICurrentPage open(String url);
 
     public void maxWindow();
 
@@ -32,7 +31,7 @@ public interface IBrowser {
 
     public Set<String> getWindows();
 
-    public com.auto.ui.page.ICurrentPage selectDefaultWindow();
+    public ICurrentPage selectDefaultWindow();
 
     public ICurrentPage selectFrame(By by);
 
@@ -69,6 +68,8 @@ public interface IBrowser {
     public <T> T page(Class<T> pageClass);
 
     public void openNew(String url);
+
+    public boolean isUseJQuery();
 
 
 }

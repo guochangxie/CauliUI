@@ -41,6 +41,8 @@ import org.junit.runners.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -118,8 +120,14 @@ public class Feeder extends BlockJUnit4ClassRunner {
 				} else if(method.getMethod().isAnnotationPresent(Param.class)){
                     Param pict = method.getAnnotation(Param.class);
                     String path = pict.value();
-                    ParameterGenerator generator = new ParameterGenerator(path);
-                    List<FrameworkMethod> methods=generator.generator(method);
+                    ParameterGenerator generator = new ParameterGenerator(new File(path));
+                    List<FrameworkMethod> methods;
+                    try {
+                        methods = generator.generator(method);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        throw new RuntimeException("初始化方法的时候出现了错误.."+method.getName());
+                    }
                     children.addAll(methods);
                 }else{
                     // parameterized Feed4JUnit generator method

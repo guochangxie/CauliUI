@@ -164,12 +164,15 @@ public class ClassFinder {
                     doScanPackageClassesByFile(classes, baseName+"."+file.getName(),file.getAbsolutePath(), recursive);
                 }
 			}else{
-				String className = file.getName().substring(0, file.getName().length()-6);
-				try{
-                    classes.add(Thread.currentThread().getContextClassLoader().loadClass(baseName+"."+className));
-				}catch(ClassNotFoundException e){
-                    throw new RuntimeException("扫描File的时候出现了异常，加载类文件的时候出现了异常");
-				}
+                if(file.getName().endsWith("class")){
+                    String className = file.getName().substring(0, file.getName().length()-6);
+                    try{
+                        classes.add(Thread.currentThread().getContextClassLoader().loadClass(baseName+"."+className));
+                    }catch(ClassNotFoundException e){
+                        throw new RuntimeException("扫描File的时候出现了异常，加载类文件的时候出现了异常");
+                    }
+                }
+
 			}
 		}
 		

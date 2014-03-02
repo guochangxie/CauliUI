@@ -1,13 +1,14 @@
 package org.cauli.ui.selenium.element;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.log4j.Logger;
 import org.cauli.ui.selenium.browser.IBrowser;
 import org.cauli.ui.selenium.listener.ActionListenerProxy;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebElement;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,44 +19,43 @@ import java.util.List;
  *@author 王天庆
  * 这是一个元素类，单纯封装的一个元素类
  */
-public class Element implements IElement {
-    private Logger logger = Logger.getLogger(Element.class);
+public class CauliElement implements IElement {
+    private Logger logger = LoggerFactory.getLogger(CauliElement.class);
     private IBrowser browser;
     private WebElement element;
-    private TempElement tempElement;
     private Actions actions;
     private String id;
-    private String jquery;
-    private String xpath;
-    public Element(IBrowser browser,TempElement tempElement){
-        this.browser=browser;
-        actions=new Actions(this.browser.getCurrentBrowserDriver());
-        this.tempElement= tempElement;
-        this.id=tempElement.getId();
-        this.jquery = tempElement.getBy();
-        this.xpath=tempElement.getXpath();
-        if(!"".equals(jquery)){
-            this.element=jquery(this.jquery);
-        }else if(!"".equals(xpath)){
-            this.element=getBrowser().getCurrentBrowserDriver().findElement(By.xpath(xpath));
-        }
-
+    public CauliElement(IBrowser browser,TempElement tempElement){
+        this(browser,tempElement.getBy());
+        this.setId(tempElement.getId());
     }
 
-    public Element(IBrowser browser){
+    public CauliElement(IBrowser browser){
         this.browser=browser;
         actions=new Actions(this.getBrowser().getCurrentBrowserDriver());
         this.id="Element";
         this.element=new RemoteWebElement();
     }
 
-    public Element(IBrowser browser,String jquery){
+    public CauliElement(IBrowser browser,String location){
         this(browser);
-        this.element = jquery(jquery);
-        this.id=jquery;
+        WebDriver driver = this.getBrowser().getCurrentBrowserDriver();
+        if(this.browser.isUseJQuery()){
+            if(location.contains("->")){
+                By by = LocationParse.parseLocation(location,driver.getPageSource());
+                this.element=driver.findElement(by);
+                this.id= by.toString();
+            }else{
+                this.element = jquery(location);
+                this.id=location;
+            }
+        }else{
+            this.element=driver.findElement(LocationParse.parseLocation(location,driver.getPageSource()));
+        }
+
     }
 
-    public WebElement jquery(String jquery){
+    protected WebElement jquery(String jquery){
         InputStream inputStream=getClass().getClassLoader().getResourceAsStream("jquery.js");
         String jqueryJs = null;
         try {
@@ -67,10 +67,34 @@ public class Element implements IElement {
         return (WebElement)( (JavascriptExecutor)driver).executeScript(jqueryJs+"return jQuery(\"" + jquery + "\")[0]");
     }
 
+
     @Override
-    public Element addLocator(By by) {
-        this.element.findElement(by);
-        return this;
+    public IElement find(String location) {
+        WebDriver driver = getBrowser().getCurrentBrowserDriver();
+        try {
+            if(this.browser.isUseJQuery()){
+                if(location.contains("->")){
+                    By by = LocationParse.parseLocation(location,driver.getPageSource());
+                    this.element=driver.findElement(by);
+                    this.id= by.toString();
+                }else{
+                    this.element = jquery(location);
+                    this.id=location;
+                }
+            }else{
+
+                this.element=driver.findElement(LocationParse.parseLocation(location,driver.getPageSource()));
+            }
+        }catch (NoSuchElementException e){
+            this.element=null;
+        }
+    return this;
+
+    }
+
+    @Override
+    public <T> T find(String location, Class<T> tClass) {
+        return null;
     }
 
     @Override
@@ -426,7 +450,7 @@ public class Element implements IElement {
     public void leftDown() {
         ActionListenerProxy.getDispatcher().beforeleftDown();
         if(isExist()){
-            this.actions.clickAndHold(this.element);
+            this.actions.clickAndHold(this.element).build().perform();
             logger.info("["+id+"]元素处按住左键");
         }else{
             logger.error("["+id+"]元素查找失败，可能这个元素不存在，元素处按住左键失败！");
@@ -440,7 +464,7 @@ public class Element implements IElement {
     public void leftUp() {
         ActionListenerProxy.getDispatcher().beforeleftUp();
         if(isExist()){
-            this.actions.release(this.element);
+            this.actions.release(this.element).build().perform();
             logger.info("["+id+"]元素处松开左键");
         }else{
             logger.error("["+id+"]元素查找失败，可能这个元素不存在，元素处松开左键失败！");
@@ -464,63 +488,27 @@ public class Element implements IElement {
         return browser;
     }
 
-    public TempElement getTempElement() {
-        return tempElement;
-    }
-
 
     public WebElement getElement(){
         return this.element;
     }
 
+
+
     @Override
-    public IElement next() {
-        InputStream inputStream=getClass().getClassLoader().getResourceAsStream("jquery.js");
-        String jqueryJs = null;
-        try {
-            jqueryJs = IOUtils.toString(inputStream);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        WebDriver driver = getBrowser().getCurrentBrowserDriver();
-        WebElement webElement= (WebElement)( (JavascriptExecutor)driver).executeScript(jqueryJs+"return jQuery(\"" + jquery + "\")[0].next()");
-        Element element1 = new Element(this.browser);
-        element1.setElement(webElement);
-        return element1;
+    public IElement child(String location) {
+        WebElement e=this.element.findElement(By.partialLinkText(location));
+        CauliElement cauliElement = new CauliElement(getBrowser());
+        cauliElement.setElement(e);
+        return cauliElement;
     }
 
     @Override
-    public List<IElement> brothers() {
-        List<IElement> list = new ArrayList<IElement>();
-        InputStream inputStream=getClass().getClassLoader().getResourceAsStream("jquery.js");
-        String jqueryJs = null;
-        try {
-            jqueryJs = IOUtils.toString(inputStream);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        WebDriver driver = getBrowser().getCurrentBrowserDriver();
-        List<WebElement> webElements= (List<WebElement>) ( (JavascriptExecutor)driver).executeScript(jqueryJs+"return jQuery(\"" + jquery + "\")[0].siblings()");
-        for(WebElement webElement : webElements){
-            Element element = new Element(getBrowser());
-            element.setElement(webElement);
-            list.add(element);
-        }
-        return list;
-    }
-
-    @Override
-    public IElement child(By by) {
-        Element child = new Element(getBrowser());
-        child.setElement(getElement().findElement(by));
-        return child;
-    }
-
-    @Override
-    public IElement childs(By by,int index) {
-        Element child = new Element(getBrowser());
-        child.setElement(getElement().findElements(by).get(index));
-        return child;
+    public IElement children(String location,int index) {
+        WebElement e=this.element.findElements(By.partialLinkText(location)).get(index);
+        CauliElement cauliElement = new CauliElement(getBrowser());
+        cauliElement.setElement(e);
+        return cauliElement;
     }
 
     @Override
@@ -529,11 +517,8 @@ public class Element implements IElement {
     }
 
 
-    public IElement node(String cssSelector){
-        return new Element(browser,cssSelector);
-    }
 
-	public void setElement(WebElement element) {
+    public void setElement(WebElement element) {
 		this.element = element;
 	}
 	

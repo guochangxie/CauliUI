@@ -1,26 +1,26 @@
 package org.cauli.ui.selenium.page;
 
-import com.auto.ui.browser.IBrowser;
-import com.auto.ui.element.*;
-import com.auto.ui.listener.ActionListenerProxy;
-import com.auto.ui.source.XMLParse;
-import org.apache.log4j.Logger;
+import org.cauli.ui.selenium.browser.IBrowser;
+import org.cauli.ui.selenium.element.CauliElement;
+import org.cauli.ui.selenium.element.IElement;
+import org.cauli.ui.selenium.element.TempElement;
+import org.cauli.ui.selenium.listener.ActionListenerProxy;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 
 public class CurrentPage implements ICurrentPage {
-    private Logger logger = Logger.getLogger(CurrentPage.class);
+    private Logger logger = LoggerFactory.getLogger(CurrentPage.class);
     private static Object currentpage;
-    private XMLParse xmlParse;
     private String commit;
     private Map<String, TempElement> elementMap;
     private Actions actions;
@@ -77,6 +77,26 @@ public class CurrentPage implements ICurrentPage {
         return null;
     }
 
+    @Override
+    public ICurrentPage frame(int index) {
+        return null;
+    }
+
+    @Override
+    public ICurrentPage frame(String nameOrId) {
+        return null;
+    }
+
+    @Override
+    public ICurrentPage frame(By by) {
+        return null;
+    }
+
+    @Override
+    public ICurrentPage frame(By by, int index) {
+        return null;
+    }
+
 
     @Override
     public Set<Cookie> getAllCookies() {
@@ -104,11 +124,6 @@ public class CurrentPage implements ICurrentPage {
         return this.currentwindow.manage().getCookieNamed(name).getValue();
     }
 
-    @Override
-    public IElement currentElement() {
-        return null;
-    }
-
     @SuppressWarnings("unchecked")
 	public static <T> T page(Class<T> clazz) {
         CurrentPage.currentpage=null;
@@ -132,34 +147,40 @@ public class CurrentPage implements ICurrentPage {
         logger.info("["+this.commit+"]页面跳转到了页面"+url);
     }
 
+    @Override
+    public <T> T find(Class<T> clazz, String location) {
+        try {
+            Constructor constructor = clazz.getConstructor(getBrowser().getClass(),String.class);
+            return (T) constructor.newInstance(getBrowser(),location);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new NoSuchElementException("没有找到此类型的元素:"+clazz.getName()) ;
+        }
+    }
 
     @Override
-    public IElement element() {
-        return new Element(this.browser);
+    public <T> T find(Class<T> clazz) {
+        try {
+            Constructor constructor = clazz.getConstructor(getBrowser().getClass());
+            return (T) constructor.newInstance(getBrowser());
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new NoSuchElementException("没有找到此类型的元素:"+clazz.getName()) ;
+        }
+    }
+
+    @Override
+    public IElement find(String location) {
+        return new CauliElement(getBrowser(),location);
     }
 
     @Override
     public IElement element(String id) {
     	if(this.elementMap.get(id)!=null){
-    		return new Element(this.browser,getElements().get(id));
-    	}else{
-    		return new Element(this.browser,this.xmlParse.getTempElment(id));
+    		return new CauliElement(this.browser,getElements().get(id));
     	}
+        return null;
         
-    }
-
-    @Override
-    public IElement element(By by) {
-        Element element = new Element(getBrowser());
-        element.setElement(getBrowser().getCurrentBrowserDriver().findElement(by));
-        return element;
-    }
-
-    @Override
-    public IElement element(By by, Integer index) {
-        Element element = new Element(getBrowser());
-        element.setElement(getBrowser().getCurrentBrowserDriver().findElements(by).get(index));
-        return element;
     }
 
     @Override
@@ -204,55 +225,10 @@ public class CurrentPage implements ICurrentPage {
     }
 
     @Override
-    public Map<String, String> getHeaders() {
-        PageResponse pageResponse=new PageResponse(this);
-        Map<String,String> headermap=pageResponse.getHeaderMap();
-        pageResponse.close();
-        return headermap;
-    }
-
-    @Override
-    public List<String> getJavaScriptURL() {
-        PageResponse pageResponse=new PageResponse(this);
-        List<String> jslist=pageResponse.getJavaScriptURL();
-        pageResponse.close();
-        return jslist;
-    }
-
-    @Override
-    public String getHeaderByName(String name) {
-        return getHeaders().get(name);
-    }
-
-    @Override
     public String getPageSource() {
         return this.currentwindow.getPageSource();
     }
 
-    @Override
-    public Integer getStatusCode() {
-        PageResponse pageResponse=new PageResponse(this);
-        Integer code = pageResponse.getStatusCode();
-        pageResponse.close();
-        return code;
-    }
-
-
-    @Override
-    public List<String> getAllCssURLByLinked() {
-        PageResponse pageResponse=new PageResponse(this);
-        List<String> csslist=pageResponse.getAllCssUrlByLinked();
-        pageResponse.close();
-        return csslist;
-    }
-
-    @Override
-    public boolean isGzip() {
-        PageResponse pageResponse=new PageResponse(this);
-        boolean bool=pageResponse.isGzip();
-        pageResponse.close();
-        return bool;
-    }
 
     @Override
     public String dealAlert() {
@@ -341,92 +317,25 @@ public class CurrentPage implements ICurrentPage {
     public WebDriver getCurrentWindow() {
         return this.browser.getCurrentBrowserDriver();
     }
-	@Override
-	public ICurrentPage frame(int index) {
-		this.browser.getCurrentBrowserDriver().switchTo().frame(index);
-		return this.browser.currentPage();
-	}
-	@Override
-	public ICurrentPage frame(String nameOrId) {
-		this.browser.getCurrentBrowserDriver().switchTo().frame(nameOrId);
-		return this.browser.currentPage();
-	}
-	@Override
-	public ICurrentPage frame(By by) {
-		WebElement element = this.browser.getCurrentBrowserDriver().findElement(by);
-		this.browser.getCurrentBrowserDriver().switchTo().frame(element);
-		return this.browser.currentPage();
-	}
-	@Override
-	public ICurrentPage frame(By by, int index) {
-		List<WebElement> elements = this.browser.getCurrentBrowserDriver().findElements(by);
-		this.browser.getCurrentBrowserDriver().switchTo().frame(elements.get(index));
-		return this.browser.currentPage();
-	}
+
 
     public void setCurrentwindow(WebDriver currentwindow) {
         this.currentwindow = currentwindow;
     }
 
-    public void setXmlParse(XMLParse xmlParse) {
-        this.xmlParse = xmlParse;
-    }
-	
+
 
 	@Override
 	public <T> T element(Class<T> clazz, String id) {
 		try {
 			Constructor<T> ctor = clazz.getConstructor(IBrowser.class,String.class);
 			return ctor.newInstance(getBrowser(),getTempElement(id));
-		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (NoSuchMethodException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
-			// TODO Auto-generated catch block
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
 
-
-	@Override
-	public <T> T element(Class<T> clazz) {
-		try {
-			Constructor<T> ctor = clazz.getConstructor(IBrowser.class);
-			return ctor.newInstance(this.browser);
-		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (NoSuchMethodException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
-	}
 	public Map<String, TempElement> getElements() {
 		return elementMap;
 	}
@@ -448,36 +357,10 @@ public class CurrentPage implements ICurrentPage {
     }
 	
 	public IElement $(String jquery) {
-		return new Element(browser,jquery);
+		return new CauliElement(browser,jquery);
 	}
 
-    public Select select(String id){
-        Select select= new Select(browser,getElements().get(id));
-        select.setId(id);
-        return select;
-    }
 
-    @Override
-    public Select select(By by) {
-        return new Select(browser,by);
-    }
-
-    @Override
-    public Table table(By by) {
-        Table table = new Table(browser);
-        table.setElement(browser.getCurrentBrowserDriver().findElement(by));
-        return table;
-    }
-
-    public Table table(String id){
-        Table table= new Table(browser,getElements().get(id));
-        table.setId(id);
-        return table;
-    }
-
-    public XMLParse getXmlParse() {
-        return xmlParse;
-    }
     
     @Override
     public void keypress(Keys key) {

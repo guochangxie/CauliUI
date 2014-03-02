@@ -22,11 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="CauliUI" />
+        <module name="CauliUI (1)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="CauliUI" target="1.6" />
+      <module name="CauliUI (1)" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

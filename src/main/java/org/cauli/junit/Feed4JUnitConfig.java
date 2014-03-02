@@ -21,7 +21,7 @@
 
 package org.cauli.junit;
 
-import com.auto.junit.info.DefaultInfoProvider;
+import org.cauli.junit.info.DefaultInfoProvider;
 import org.databene.benerator.anno.DefaultPathResolver;
 import org.databene.benerator.anno.PathResolver;
 import org.databene.benerator.engine.BeneratorContext;

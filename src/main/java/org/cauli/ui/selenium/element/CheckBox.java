@@ -1,14 +1,14 @@
 package org.cauli.ui.selenium.element;
 
-
-import com.auto.junit.runtime.RuntimeMethod;
-import com.auto.ui.browser.IBrowser;
-import org.apache.log4j.Logger;
+import org.cauli.ui.selenium.browser.IBrowser;
 import org.openqa.selenium.NoSuchElementException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
-public class CheckBox extends Element {
-    private Logger logger = Logger.getLogger(CheckBox.class);
+public class CheckBox extends CauliElement {
+    private Logger logger = LoggerFactory.getLogger(CheckBox.class);
+
     public CheckBox(IBrowser browser, TempElement tempElement) {
         super(browser, tempElement);
     }
@@ -17,10 +17,10 @@ public class CheckBox extends Element {
         super(browser);
     }
 
-
-    public boolean isCheck(){
-        return false;
+    public CheckBox(IBrowser browser, String location) {
+        super(browser, location);
     }
+
 
     /**
      * 检验这个checkBox多选框是否被选中
@@ -31,7 +31,7 @@ public class CheckBox extends Element {
         if(isExist()){
             return getElement().isSelected();
         }else{
-            logger.error("["+ RuntimeMethod.getName()+"]"+"元素不存在，校验失败！");
+            logger.error("元素不存在，校验失败！");
             throw new NoSuchElementException("["+this.getId()+"]判断元素是否被选中的时候出现了错误，可能的原因是这个元素没有被找到！");
         }
 
@@ -47,7 +47,7 @@ public class CheckBox extends Element {
                 getElement().click();
             }
         }else{
-            logger.error("["+RuntimeMethod.getName()+"]"+"没有找到元素，设定值失败！");
+            logger.error("没有找到元素，设定值失败！");
             throw new NoSuchElementException("["+this.getId()+"]设置状态的时候出现了错误，可能的原因是这个元素没有被找到！");
         }
 

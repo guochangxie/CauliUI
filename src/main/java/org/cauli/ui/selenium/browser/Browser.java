@@ -26,6 +26,7 @@ public class Browser implements IBrowser {
     private Logger logger = LoggerFactory.getLogger(Browser.class);
 	@SuppressWarnings("unused")
 	private boolean isClosed;
+    private boolean isUseJQuery=false;
     private WindowsCollectorListener windowsCollectorListener;
     private WindowSource windowSource;
     private ICurrentPage currentPage;
@@ -42,7 +43,7 @@ public class Browser implements IBrowser {
         logger.info("初始化了浏览器"+browser.toString()+"来进行自动化测试");
     }
 
-    public BaseBrowser(Engine browser,URL url){
+    public Browser(Engine browser,URL url){
         if(url==null){
             this.driver=browser.browser();
         }else{
@@ -58,18 +59,13 @@ public class Browser implements IBrowser {
         logger.info("初始化了浏览器"+browser.toString()+"来进行自动化测试");
     }
 
-    public static BaseBrowser  creatBrowser(Engine browser){
-        BaseBrowser baseBrowser=new BaseBrowser(browser);
-        return baseBrowser;
-    }
-
     @Override
     public ICurrentPage open(String url) {
         this.getCurrentBrowserDriver().get(url);
         this.setClosed(false);
         //logger.info("打开了http地址"+url);
         this.currentPage.setBrowser(this);
-        this.windowSource.getWindowsCollecter().updateWindows();
+        this.windowSource.windowsCheck();
         logger.info("当前初始化页面信息：URL--->"+this.currentPage().getUrl());
         logger.info("当前初始化页面信息：Title--->"+this.currentPage().getTitle());
         logger.info("当前初始化页面信息：窗口句柄数--->"+this.getWindows().size());
@@ -297,6 +293,8 @@ public class Browser implements IBrowser {
 	public void pageLoadTimeout(int seconds) {
 		this.driver.manage().timeouts().pageLoadTimeout(seconds, TimeUnit.SECONDS);	
 	}
+
+
     
     public void elementLoadTimeout(int seconds){
     	this.driver.manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
@@ -328,6 +326,11 @@ public class Browser implements IBrowser {
         selectLastOpenedPage();
     }
 
+    @Override
+    public boolean isUseJQuery() {
+        return isUseJQuery;
+    }
+
 
     @Override
 	public ICurrentPage selectWindowContainsTitle(String title) {
@@ -341,6 +344,7 @@ public class Browser implements IBrowser {
 	}
 
 
-
-	
+    public void setUseJQuery(boolean isUseJQuery) {
+        this.isUseJQuery = isUseJQuery;
+    }
 }

@@ -20,9 +20,7 @@
  */
 
 package org.cauli.junit.info;
-
-
-import com.auto.junit.TestInfoProvider;
+import org.cauli.junit.TestInfoProvider;
 import org.databene.commons.ArrayFormat;
 
 import java.lang.reflect.Method;

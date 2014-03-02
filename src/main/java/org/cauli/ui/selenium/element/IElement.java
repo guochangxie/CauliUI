@@ -1,17 +1,15 @@
 package org.cauli.ui.selenium.element;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 /**
  * 元素接口
  */
 public interface IElement {
-    public Object addLocator(By by);
+    public IElement find(String location);
+    public <T>T find(String location,Class<T> tClass);
     public void click();
     public void doubleClick();
     public void keyDown(Keys key);
@@ -49,9 +47,9 @@ public interface IElement {
     public void keyPress(String keys);
     public void release();
     public WebElement getElement();
-    public IElement next();
-    public List<IElement> brothers();
-    public IElement child(By by);
-    public IElement childs(By by, int index);
+//    public IElement next();
+//    public List<IElement> brothers();
+    public IElement child(String location);
+    public IElement children(String location, int index);
     public void contextClick();
 }

@@ -1,9 +1,10 @@
 package org.cauli.ui.selenium.element;
 
-import com.auto.ui.browser.IBrowser;
 
+import org.cauli.ui.selenium.browser.IBrowser;
 
-public class Image extends Element {
+public class Image extends CauliElement {
+
 
     public Image(IBrowser browser, TempElement tempElement) {
         super(browser, tempElement);
@@ -12,9 +13,8 @@ public class Image extends Element {
     public Image(IBrowser browser) {
         super(browser);
     }
-    
 
-    public String getsrc(){
-        return getAttribute("src");
+    public Image(IBrowser browser, String location) {
+        super(browser, location);
     }
 }
