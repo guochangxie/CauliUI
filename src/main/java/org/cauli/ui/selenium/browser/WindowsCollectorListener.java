@@ -1,6 +1,8 @@
 package org.cauli.ui.selenium.browser;
 
-import org.apache.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Created with IntelliJ IDEA.
@@ -10,7 +12,6 @@ import org.apache.log4j.Logger;
  * To change this template use File | Settings | File Templates.
  */
 public class WindowsCollectorListener implements WindowsListener {
-    private Logger logger = Logger.getLogger(WindowsCollectorListener.class);
     @Override
     public void windowsCollecter(WindowsCollecter windowsCollecter) {
         windowsCollecter.updateWindows();

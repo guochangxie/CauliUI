@@ -2,6 +2,7 @@ package org.cauli.junit;
 
 import org.junit.runners.model.FrameworkMethod;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -9,5 +10,5 @@ import java.util.List;
  */
 public interface ParameterProvider {
 
-    public List<FrameworkMethod> generator(FrameworkMethod method);
+    public List<FrameworkMethod> generator(FrameworkMethod method) throws IOException;
 }

@@ -1,17 +1,18 @@
 package org.cauli.ui.selenium.element;
 
-import com.auto.junit.runtime.RuntimeMethod;
-import com.auto.ui.browser.IBrowser;
-import org.apache.log4j.Logger;
+import org.cauli.ui.selenium.browser.IBrowser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Table extends Element {
-	private Logger logger = Logger.getLogger(Table.class);
+public class Table extends CauliElement {
+    private Logger logger = LoggerFactory.getLogger(Table.class);
+
     public Table(IBrowser browser, TempElement tempElement) {
         super(browser, tempElement);
     }
@@ -20,11 +21,9 @@ public class Table extends Element {
         super(browser);
     }
 
-    public Table addLocator(By by){
-        setElement(getBrowser().getCurrentBrowserDriver().findElement(by));
-        return this;
+    public Table(IBrowser browser, String location) {
+        super(browser, location);
     }
-
 
     /**
 	 *获得table的第row行，col列的值，这个方法只能返回td的值，对于标题th标签是不支持的，可以用getTableTitle的方法，</br>
@@ -39,13 +38,13 @@ public class Table extends Element {
 		if(isExist()){
 			try{
 				content=getElement().findElement(By.xpath(".//tr[" + (row) + "]/td[" + (col) + "]")).getText();
-				logger.info("["+RuntimeMethod.getName()+"]"+">>["+this.getId()+"]第"+(row)+"行，第"+(col)+"列的元素获取成功！");
+				logger.info("["+this.getId()+"]第"+(row)+"行，第"+(col)+"列的元素获取成功！");
 			}catch(Exception e){
-				logger.info("["+RuntimeMethod.getName()+"]"+">>["+this.getId()+"]第"+(row)+"行，第"+(col)+"列的元素获取失败！找不到这个table元素！",e);
+				logger.info("[["+this.getId()+"]第"+(row)+"行，第"+(col)+"列的元素获取失败！找不到这个table元素！",e);
 			}
 			return content;
 		}else{
-			logger.error("["+RuntimeMethod.getName()+"]"+"第"+(row)+"行，第"+(col)+"列的元素获取成功！");
+			logger.error("第"+(row)+"行，第"+(col)+"列的元素获取成功！");
 			throw new RuntimeException("["+this.getId()+"]获得table内的数据的时候出现错误，可能的原因是元素没有被找到！");
 		}
 		
@@ -60,13 +59,13 @@ public class Table extends Element {
 		if(isExist()){
 			try{
 				content=getElement().findElement(By.xpath(".//tr[" + (row) + "]/th{" + (col) + "]")).getText();
-				logger.info("["+RuntimeMethod.getName()+"]"+">>["+this.getId()+"]第"+(row+1)+"行，第"+(col+1)+"列的元素获取成功！");
+				logger.info("["+this.getId()+"]第"+(row+1)+"行，第"+(col+1)+"列的元素获取成功！");
 			}catch(Exception e){
-				logger.info("["+RuntimeMethod.getName()+"]"+">>["+this.getId()+"]第"+(row+1)+"行，第"+(col+1)+"列的元素获取失败！找不到这个table元素！");
+				logger.info("["+this.getId()+"]第"+(row+1)+"行，第"+(col+1)+"列的元素获取失败！找不到这个table元素！");
 			}
 			return content;
 		}else{
-			logger.error("["+RuntimeMethod.getName()+"]"+"第"+(row+1)+"行，第"+(col+1)+"列的元素获取成功！");
+			logger.error("第"+(row+1)+"行，第"+(col+1)+"列的元素获取成功！");
 			throw new RuntimeException("["+this.getId()+"]获得table内的数据的时候出现错误，可能的原因是元素没有被找到！");
 		}
 		
@@ -74,7 +73,7 @@ public class Table extends Element {
 	
 	/**
 	 * 获得此table第col列所有行的值，列号从0开始
-	 * @param col列号
+	 * @param col 列号
 	 * @return 字符串list，col列的所有行的信息
 	 * */
 	public List<String> getTableContentByColumn(int col){
@@ -85,10 +84,10 @@ public class Table extends Element {
 				for(WebElement cell : cells){
 					contents.add(cell.getText());
 				}
-				logger.info("["+RuntimeMethod.getName()+"]"+">>["+this.getId()+"]第"+col+"列的信息获得成功！");
+				logger.info("["+this.getId()+"]第"+col+"列的信息获得成功！");
 				return contents;
 			}catch(Exception e){
-				logger.error("["+RuntimeMethod.getName()+"]"+"第"+col+"列的信息获得失败！！");
+				logger.error("第"+col+"列的信息获得失败！！");
 			}
 		}else{
 			logger.error(">>["+this.getId()+"]第"+col+"列的信息获得失败！！元素没有找到！");
@@ -112,14 +111,14 @@ public class Table extends Element {
 					}
 					contents.add(getTableContentByRow(rowCount));
 					rowCount++;
-					logger.info("["+RuntimeMethod.getName()+"]"+">>["+this.getId()+"]第"+rowCount+"行的所有信息获得成功！");
+					logger.info("["+this.getId()+"]第"+rowCount+"行的所有信息获得成功！");
 				}
 			}catch(Exception e){
-				logger.info("["+RuntimeMethod.getName()+"]"+"第"+rowCount+"行的所有信息获得失败！没有找到这个table内的要查找的元素！");
+				logger.info("第"+rowCount+"行的所有信息获得失败！没有找到这个table内的要查找的元素！");
 			}
 			return contents;
 		}else{
-			logger.info("["+RuntimeMethod.getName()+"]"+"第"+rowCount+"行的所有信息获得失败！没有找到这个table元素！");
+			logger.info("第"+rowCount+"行的所有信息获得失败！没有找到这个table元素！");
 			throw new RuntimeException("["+this.getId()+"]查找table的所有元素的时候出现错误！可能这个元素不存在！");
 		}
 		
@@ -138,13 +137,13 @@ public class Table extends Element {
 				for(WebElement cell : cells){
 					contents.add(cell.getText());
 				}
-				logger.info("["+RuntimeMethod.getName()+"]"+">>["+this.getId()+"]第"+row+"行的信息获得成功！");
+				logger.info("["+this.getId()+"]第"+row+"行的信息获得成功！");
 			}catch(Exception e){
-				logger.info("["+RuntimeMethod.getName()+"]"+"第"+row+"行的信息获得失败！找不到table内的要查找的的元素！");
+				logger.info("第"+row+"行的信息获得失败！找不到table内的要查找的的元素！");
 			}
-			return null;
+			return contents;
 		}else{
-			logger.info("["+RuntimeMethod.getName()+"]"+"第"+row+"行的信息获得失败！找不到这个table的元素！");
+			logger.info("第"+row+"行的信息获得失败！找不到这个table的元素！");
 			throw new RuntimeException("["+this.getId()+"]查找table的值时出现了错误，可能的原因是这个table元素定位错误！没有找到这个元素");
 		}
 	

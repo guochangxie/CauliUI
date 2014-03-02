@@ -46,9 +46,10 @@ public class WindowSource {
     }
 
     public void windowsCheck(){
-        if(windowsCollecter.windowNums==browser.getWindows().size()){
-             notifyWindowsCollecter(windowsCollecter);
-        }
+//        if(windowsCollecter.windowNums==browser.getWindows().size()){
+//             notifyWindowsCollecter(windowsCollecter);
+//        }
+        notifyWindowsCollecter(windowsCollecter);
     }
 
 

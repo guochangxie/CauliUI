@@ -22,7 +22,7 @@
 package org.cauli.junit.info;
 
 
-import com.auto.junit.TestInfoProvider;
+import org.cauli.junit.TestInfoProvider;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
