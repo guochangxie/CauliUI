@@ -226,7 +226,7 @@ public class CauliElement implements IElement {
     }
 
     @Override
-    public void clear() {
+    public IElement clear() {
         ActionListenerProxy.getDispatcher().beforeclear();
         if(isExist()){
             element.clear();
@@ -237,6 +237,7 @@ public class CauliElement implements IElement {
             throw new NoSuchElementException("["+id+"]元素查找失败，可能这个元素不存在，清空失败！");
         }
         ActionListenerProxy.getDispatcher().afterclear();
+        return this;
     }
 
     @Override

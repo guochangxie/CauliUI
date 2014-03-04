@@ -166,8 +166,14 @@ public class Browser implements IBrowser {
     public ICurrentPage selectWindowByTitle(String title) {
         ActionListenerProxy.getDispatcher().beforeselectWindow();
         this.windowSource.getWindowsCollecter().updateWindows();
-        String windowhandle=this.windowSource.getWindowsCollecter().getWindowInfoMap().get(title).getWindowHandle();
-        this.driver.switchTo().window(windowhandle);
+        Set<String> windows = getCurrentBrowserDriver().getWindowHandles();
+        for(String window : windows){
+            getCurrentBrowserDriver().switchTo().window(window);
+            String titleName = getCurrentBrowserDriver().getCurrentUrl();
+            if(titleName.equals(title)){
+                break;
+            }
+        }
         logger.info("当前页面切换到了-------->" + title);
         ActionListenerProxy.getDispatcher().afterselectWindow();
         this.currentPage.setBrowser(this);
@@ -181,10 +187,11 @@ public class Browser implements IBrowser {
     public ICurrentPage selectWindowByUrl(String url) {
         ActionListenerProxy.getDispatcher().beforeselectWindow();
         this.windowSource.getWindowsCollecter().updateWindows();
-        for(Map.Entry<String,WindowInfo> info:this.windowSource.getWindowsCollecter().getWindowInfoMap().entrySet()){
-            if(info.getValue().getUrl().equals(url)){
-                this.driver.switchTo().window(info.getValue().getWindowHandle());
-                logger.info("当前页面切换到了--------->"+info.getValue().getTitle());
+        Set<String> windows = getCurrentBrowserDriver().getWindowHandles();
+        for(String window : windows){
+            getCurrentBrowserDriver().switchTo().window(window);
+            String titleName = getCurrentBrowserDriver().getCurrentUrl();
+            if(titleName.equals(url)){
                 break;
             }
         }
@@ -212,10 +219,11 @@ public class Browser implements IBrowser {
     public ICurrentPage selectWindowContainsUrl(String url) {
         ActionListenerProxy.getDispatcher().beforeselectWindow();
         this.windowSource.getWindowsCollecter().updateWindows();
-        for(Map.Entry<String,WindowInfo> info:this.windowSource.getWindowsCollecter().getWindowInfoMap().entrySet()){
-            if(info.getValue().getUrl().contains(url)){
-                this.driver.switchTo().window(info.getValue().getWindowHandle());
-                logger.info("当前页面切换到了--------->"+info.getValue().getTitle());
+        Set<String> windows = getCurrentBrowserDriver().getWindowHandles();
+        for(String window : windows){
+            getCurrentBrowserDriver().switchTo().window(window);
+            String titleName = getCurrentBrowserDriver().getCurrentUrl();
+            if(titleName.contains(url)){
                 break;
             }
         }
@@ -334,13 +342,23 @@ public class Browser implements IBrowser {
 
     @Override
 	public ICurrentPage selectWindowContainsTitle(String title) {
-		Map<String, WindowInfo> map = this.windowSource.getWindowsCollecter().getWindowInfoMap();
-		for(Map.Entry<String, WindowInfo> entry:map.entrySet()){
-			if(entry.getKey().contains(title)){
-				return selectWindowByTitle(entry.getKey());
-			}
-		}
-		return null;
+        ActionListenerProxy.getDispatcher().beforeselectWindow();
+        this.windowSource.getWindowsCollecter().updateWindows();
+        Set<String> windows = getCurrentBrowserDriver().getWindowHandles();
+        for(String window : windows){
+            getCurrentBrowserDriver().switchTo().window(window);
+            String titleName = getCurrentBrowserDriver().getCurrentUrl();
+            if(titleName.contains(title)){
+                break;
+            }
+        }
+        logger.info("当前页面切换到了-------->" + title);
+        ActionListenerProxy.getDispatcher().afterselectWindow();
+        this.currentPage.setBrowser(this);
+        logger.info("当前页面信息：URL--->"+this.currentPage().getUrl());
+        logger.info("当前页面信息：Title--->"+this.currentPage().getTitle());
+        logger.info("当前页面信息：窗口句柄数--->"+this.getWindows().size());
+        return this.currentPage;
 	}
 
 

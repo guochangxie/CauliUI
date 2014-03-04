@@ -21,7 +21,7 @@ public interface IElement {
     public void assertIsExist();
     public void assertText(String text);
     public void assertValue(String value);
-    public void clear();
+    public IElement clear();
     public void input(String text);
     public void focus();
     public String getAttribute(String attr);

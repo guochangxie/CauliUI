@@ -1,6 +1,7 @@
 package org.cauli.ui.selenium.browser;
 
 
+import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,24 +16,14 @@ import java.util.*;
  */
 public class WindowsCollecter extends EventObject {
     private Logger logger = LoggerFactory.getLogger(WindowsCollecter.class);
-    public Set<String> windowhandles;
+    public List<String> windowhandles;
     public int windowNums;
-    //这个里面存title和window信息
-    private Map<String,WindowInfo> windowInfoMap;
-    private List<WindowInfo> windowInfoList;
-    private String currentSessionId;
-    //这个存储url和window信息
-    private Map<String,WindowInfo> windowInfourlMap;
     private IBrowser browser;
     public WindowsCollecter(Object source,IBrowser browser) {
         super(source);
         this.browser=browser;
-        this.windowInfoMap=new HashMap<String, WindowInfo>();
-        this.windowInfourlMap = new HashMap<String,WindowInfo>();
-        this.windowInfoList=new ArrayList<WindowInfo>();
         this.windowNums=0;
-        //this.windowhandles=browser.getWindows();
-        this.windowhandles=new HashSet<String>();
+        this.windowhandles= Lists.newArrayList();
 
     }
 
@@ -42,7 +33,7 @@ public class WindowsCollecter extends EventObject {
         }
         Set<String> handles=browser.getWindows();
         if(handles.size()>this.windowNums){
-            logger.info("窗口的句柄数增多，进行句柄收集操作, Handles Number->{}",windowNums);
+            logger.info("窗口的句柄数增多，进行句柄收集操作, 初始化Handles Number->{}",windowNums);
             if(!isAlertHandle()){
                 String currentWindowHandle=browser.getCurrentBrowserDriver().getWindowHandle();
                 for(String windowhandle:handles){
@@ -50,46 +41,23 @@ public class WindowsCollecter extends EventObject {
                         continue;
                     }else{
                         browser.getCurrentBrowserDriver().switchTo().window(windowhandle);
-                        String url=browser.getCurrentBrowserDriver().getCurrentUrl();
                         String title=browser.getCurrentBrowserDriver().getTitle();
-                        WindowInfo windowInfo = new WindowInfo(browser,url,windowhandle,title);
-                        windowInfoMap.put(title,windowInfo);
-                        windowInfourlMap.put(url,windowInfo);
-                        windowInfoList.add(windowInfo);
                         this.windowNums=handles.size();
-                        this.windowhandles=handles;
+                        this.windowhandles.add(currentWindowHandle);
                         logger.info("添加了新的窗口信息->"+title);
                     }
-
                 }
                 browser.getCurrentBrowserDriver().switchTo().window(currentWindowHandle);
             }
         }else if(handles.size()<this.windowNums){
-            String currentWindowHandle=browser.getCurrentBrowserDriver().getWindowHandle();
             for(String windowhandle:this.windowhandles){
                 if(handles.contains(windowhandle)){
                     continue;
                 }else{
-                    browser.getCurrentBrowserDriver().switchTo().window(windowhandle);
-                    String title=browser.currentPage().getTitle();
-                    windowInfoList.remove(windowInfoMap.get(title));
-                    windowInfoMap.remove(title);
-                    windowInfourlMap.remove(browser.currentPage().getUrl());
+                    this.windowhandles.remove(windowhandle);
                     this.windowNums=handles.size();
-                    logger.info("更新了窗口信息，窗口->"+title+"被删除了");
                 }
             }
-            browser.getCurrentBrowserDriver().switchTo().window(currentWindowHandle);
-        }else if(handles.size()==this.windowNums&&isCurrentPageChanged()){
-//            String title=this.browser.getCurrentBrowserDriver().getTitle();
-//            String currentUrl=this.browser.getCurrentBrowserDriver().getCurrentUrl();
-//            String windownhandle=this.browser.getCurrentBrowserDriver().getWindowHandle();
-//            WindowInfo windowInfo=new WindowInfo(this.browser,currentUrl,windownhandle,title);
-//            this.windowInfoMap.put(title,windowInfo);
-//            this.windowInfourlMap.put(currentUrl,windowInfo);
-//            this.windowInfoList.remove(this.windowInfoList.get(windowInfoList.size()-1));
-//            this.windowInfoList.add(windowInfo);
-            logger.info("当前页面发生了变化，切换到了新的页面--->{},url->{}",browser.getCurrentBrowserDriver().getTitle(),browser.getCurrentBrowserDriver().getCurrentUrl());
         }
 
     }
@@ -104,41 +72,15 @@ public class WindowsCollecter extends EventObject {
 
     }
 
-    public Map<String,WindowInfo> getWindowInfoMap(){
-        return this.windowInfoMap;
-    }
-
     public String getLastWindowhandle(){
-        WindowInfo windowInfo=this.windowInfoList.get(this.windowNums-1);
-        return windowInfo.getWindowHandle();
+        return this.windowhandles.get(windowhandles.size()-1);
     }
 
-    public String getFirstWindowhandle(){
-        WindowInfo windowInfo = this.windowInfoMap.get(0);
-        return windowInfo.getWindowHandle();
+    public String getWindowhandleByIndex(int index){
+        return this.windowhandles.get(index);
     }
 
-    public String getWindowhandleByIndex(Integer index){
-        WindowInfo windowInfo=this.windowInfoList.get(index-1);
-        return windowInfo.getWindowHandle();
-    }
 
-    private boolean isCurrentPageChanged(){
-        String currentWindowHandle = this.browser.getCurrentBrowserDriver().getWindowHandle();
-        for(WindowInfo windowInfo:this.windowInfoList){
-            if(windowInfo.getWindowHandle().equals(currentWindowHandle)){
-            	try{
-            		if(!windowInfo.getTitle().equals(this.browser.getCurrentBrowserDriver().getTitle())
-                            ||!windowInfo.getUrl().equals(this.browser.getCurrentBrowserDriver().getCurrentUrl())){
-                        return true;
-                    }
-            	}catch(Exception e){
-            		return false;
-            	}
-                
-            }
-        }
-        return false;
-    }
+
 
 }

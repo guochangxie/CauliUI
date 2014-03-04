@@ -209,7 +209,7 @@ public class CurrentPage implements ICurrentPage {
         if(getTitle().equals(title)){
             logger.info("当前页面的title值["+title+"]校验成功，校验成功！");
         }else{
-            logger.error("当前页面title值["+title+"]校验失败，校验成功！");
+            logger.error("当前页面title值["+title+"]校验失败，断言失败！");
             Assert.fail();
         }
     }
@@ -357,7 +357,9 @@ public class CurrentPage implements ICurrentPage {
     }
 	
 	public IElement $(String jquery) {
-		return new CauliElement(browser,jquery);
+		CauliElement cauliElement= new CauliElement(browser,jquery);
+        cauliElement.setId(jquery);
+        return  cauliElement;
 	}
 
 

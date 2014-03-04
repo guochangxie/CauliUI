@@ -3,26 +3,22 @@ package org.cauli.junit;
 
 
 import com.google.common.collect.Lists;
-import org.apache.log4j.Logger;
 import org.cauli.instrument.ClassPool;
-import org.cauli.junit.anno.InterceptorClass;
+import org.cauli.junit.anno.Param;
 import org.cauli.junit.anno.ThreadRunner;
-import org.cauli.junit.statement.Interceptor;
 import org.cauli.junit.statement.InterceptorStatement;
 import org.cauli.ui.annotation.CauliRule;
 import org.cauli.ui.annotation.Listener;
+import org.databene.benerator.anno.AnnotationMapper;
 import org.junit.Rule;
-import org.junit.internal.AssumptionViolatedException;
-import org.junit.internal.runners.model.EachTestNotifier;
-import org.junit.rules.RunRules;
+import org.junit.Test;
 import org.junit.rules.TestRule;
 import org.junit.runner.manipulation.NoTestsRemainException;
 import org.junit.runner.notification.RunNotifier;
-import org.junit.runner.notification.StoppedByUserException;
-import org.junit.runners.model.FrameworkMethod;
-import org.junit.runners.model.InitializationError;
-import org.junit.runners.model.RunnerScheduler;
-import org.junit.runners.model.Statement;
+import org.junit.runners.model.*;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -124,4 +120,27 @@ public class JUnitBaseRunner extends Feeder{
         result.addAll(getRules());
         return result;
     }
+
+
+//    @Override
+//    protected List<FrameworkMethod> computeTestMethods() {
+//        List<FrameworkMethod> children = super.computeTestMethods();
+//        TestClass testClass = getTestClass();
+//        for (FrameworkMethod method : testClass.getAnnotatedMethods(Test.class)) {
+//            if(method.getMethod().isAnnotationPresent(Param.class)){
+//                Param param = method.getAnnotation(Param.class);
+//                String path = param.value();
+//                ParameterGenerator generator = new ParameterGenerator(new File(path));
+//                List<FrameworkMethodWithParameters> methods;
+//                try {
+//                    methods = generator.generator(method);
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                    throw new RuntimeException("初始化方法的时候出现了错误.."+method.getName());
+//                }
+//                children.addAll(methods);
+//            }
+//        }
+//        return children;
+//    }
 }

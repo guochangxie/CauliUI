@@ -19,8 +19,8 @@ public class ParameterGenerator implements ParameterProvider{
         this.file=file;
     }
 
-    public List<FrameworkMethod> generator(FrameworkMethod method) throws IOException {
-        List<FrameworkMethod> result = Lists.newArrayList();
+    public List<FrameworkMethodWithParameters> generator(FrameworkMethod method) throws IOException {
+        List<FrameworkMethodWithParameters> result = Lists.newArrayList();
         DefaultInfoProvider infoProvider = new DefaultInfoProvider();
         Method m = method.getMethod();
         if(!file.exists()){
@@ -68,7 +68,7 @@ public class ParameterGenerator implements ParameterProvider{
             FrameworkMethodWithParameters frameworkMethodWithParameters=new FrameworkMethodWithParameters(m,params,infoProvider.testInfo(m,params));
             result.add(frameworkMethodWithParameters);
         }
-        return null;
+        return result;
     }
 
     public FileGenerator getFileGenerator() {

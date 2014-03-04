@@ -118,10 +118,10 @@ public class Feeder extends BlockJUnit4ClassRunner {
 					children.add(method);
 					continue;
 				} else if(method.getMethod().isAnnotationPresent(Param.class)){
-                    Param pict = method.getAnnotation(Param.class);
-                    String path = pict.value();
+                    Param param = method.getAnnotation(Param.class);
+                    String path = param.value();
                     ParameterGenerator generator = new ParameterGenerator(new File(path));
-                    List<FrameworkMethod> methods;
+                    List<FrameworkMethodWithParameters> methods;
                     try {
                         methods = generator.generator(method);
                     } catch (IOException e) {
