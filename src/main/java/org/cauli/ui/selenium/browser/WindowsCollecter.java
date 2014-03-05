@@ -40,14 +40,11 @@ public class WindowsCollecter extends EventObject {
                     if(this.windowhandles.contains(windowhandle)){
                         continue;
                     }else{
-                        browser.getCurrentBrowserDriver().switchTo().window(windowhandle);
-                        String title=browser.getCurrentBrowserDriver().getTitle();
                         this.windowNums=handles.size();
-                        this.windowhandles.add(currentWindowHandle);
-                        logger.info("添加了新的窗口信息->"+title);
+                        this.windowhandles.add(0,windowhandle);
+                        logger.info("添加了新的窗口信息->"+windowhandle);
                     }
                 }
-                browser.getCurrentBrowserDriver().switchTo().window(currentWindowHandle);
             }
         }else if(handles.size()<this.windowNums){
             for(String windowhandle:this.windowhandles){
@@ -73,7 +70,7 @@ public class WindowsCollecter extends EventObject {
     }
 
     public String getLastWindowhandle(){
-        return this.windowhandles.get(windowhandles.size()-1);
+        return this.windowhandles.get(0);
     }
 
     public String getWindowhandleByIndex(int index){

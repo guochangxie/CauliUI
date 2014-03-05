@@ -1,9 +1,7 @@
 package org.cauli.ui.selenium.page;
 
 import org.cauli.ui.selenium.browser.IBrowser;
-import org.cauli.ui.selenium.element.CauliElement;
-import org.cauli.ui.selenium.element.IElement;
-import org.cauli.ui.selenium.element.TempElement;
+import org.cauli.ui.selenium.element.*;
 import org.cauli.ui.selenium.listener.ActionListenerProxy;
 import org.junit.Assert;
 import org.openqa.selenium.*;
@@ -150,7 +148,7 @@ public class CurrentPage implements ICurrentPage {
     @Override
     public <T> T find(Class<T> clazz, String location) {
         try {
-            Constructor constructor = clazz.getConstructor(getBrowser().getClass(),String.class);
+            Constructor constructor = clazz.getConstructor(IBrowser.class,String.class);
             return (T) constructor.newInstance(getBrowser(),location);
         } catch (Exception e) {
             e.printStackTrace();
@@ -165,13 +163,18 @@ public class CurrentPage implements ICurrentPage {
             return (T) constructor.newInstance(getBrowser());
         } catch (Exception e) {
             e.printStackTrace();
-            throw new NoSuchElementException("没有找到此类型的元素:"+clazz.getName()) ;
+            throw new RuntimeException("没有找到此类型的元素:"+clazz.getName(),e) ;
         }
     }
 
     @Override
     public IElement find(String location) {
         return new CauliElement(getBrowser(),location);
+    }
+
+    public Select select(String location){
+        Select select = new Select(getBrowser(),location);
+        return select;
     }
 
     @Override
@@ -374,6 +377,12 @@ public class CurrentPage implements ICurrentPage {
     public void release() {
             this.actions.release().build().perform();
             
+    }
+
+    @Override
+    public Table table(String location) {
+        Table table = new Table(getBrowser(),location);
+        return table;
     }
 }
 

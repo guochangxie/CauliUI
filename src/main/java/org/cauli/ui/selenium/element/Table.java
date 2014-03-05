@@ -49,6 +49,17 @@ public class Table extends CauliElement {
 		}
 		
 	}
+
+
+    public IElement cell(int row ,int col){
+        if(isExist()){
+            CauliElement cauliElement = new CauliElement(getBrowser());
+            cauliElement.setElement(getElement().findElement(By.xpath(".//tr[" + row + "]/td[" + col + "]")));
+            return cauliElement;
+        }else {
+            throw new RuntimeException("["+this.getId()+"]获得table内的数据的时候出现错误，可能的原因是元素没有被找到！");
+        }
+    }
 	/**这个方法返回的是table的标题内容
 	 * @param row 行号
 	 * @param col 列号

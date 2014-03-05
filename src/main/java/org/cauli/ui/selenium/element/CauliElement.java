@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,19 +73,37 @@ public class CauliElement implements IElement {
     public IElement find(String location) {
         WebDriver driver = getBrowser().getCurrentBrowserDriver();
         try {
-            if(this.browser.isUseJQuery()){
-                if(location.contains("->")){
-                    By by = LocationParse.parseLocation(location,driver.getPageSource());
-                    this.element=driver.findElement(by);
-                    this.id= by.toString();
+            if(this.element==null){
+                if(this.browser.isUseJQuery()){
+                    if(location.contains("->")){
+                        By by = LocationParse.parseLocation(location,driver.getPageSource());
+                        this.element=driver.findElement(by);
+                        this.id= by.toString();
+                    }else{
+                        this.element = jquery(location);
+                        this.id=location;
+                    }
                 }else{
-                    this.element = jquery(location);
+
+                    this.element=driver.findElement(LocationParse.parseLocation(location,driver.getPageSource()));
                     this.id=location;
                 }
             }else{
-
-                this.element=driver.findElement(LocationParse.parseLocation(location,driver.getPageSource()));
+                if(this.browser.isUseJQuery()){
+                    if(location.contains("->")){
+                        By by = LocationParse.parseLocation(location,driver.getPageSource());
+                        this.element=getElement().findElement(by);
+                        this.id= by.toString();
+                    }else{
+                        this.element = jquery(location);
+                        this.id=location;
+                    }
+                }else{
+                    this.element=getElement().findElement(LocationParse.parseLocation(location, driver.getPageSource()));
+                    this.id=location;
+                }
             }
+
         }catch (NoSuchElementException e){
             this.element=null;
         }
@@ -94,7 +113,47 @@ public class CauliElement implements IElement {
 
     @Override
     public <T> T find(String location, Class<T> tClass) {
-        return null;
+        WebDriver driver = getBrowser().getCurrentBrowserDriver();
+        try {
+            if(this.element==null){
+                if(this.browser.isUseJQuery()){
+                    if(location.contains("->")){
+                        By by = LocationParse.parseLocation(location,driver.getPageSource());
+                        this.element=driver.findElement(by);
+                        this.id= by.toString();
+                    }else{
+                        this.element = jquery(location);
+                        this.id=location;
+                    }
+                }else{
+
+                    this.element=driver.findElement(LocationParse.parseLocation(location,driver.getPageSource()));
+                }
+            }else{
+                if(this.browser.isUseJQuery()){
+                    if(location.contains("->")){
+                        By by = LocationParse.parseLocation(location,driver.getPageSource());
+                        this.element=getElement().findElement(by);
+                        this.id= by.toString();
+                    }else{
+                        this.element = jquery(location);
+                        this.id=location;
+                    }
+                }else{
+                    this.element=getElement().findElement(LocationParse.parseLocation(location,driver.getPageSource()));
+                }
+            }
+
+        }catch (NoSuchElementException e){
+            this.element=null;
+        }
+        try {
+            Constructor<T> constructor = tClass.getConstructor(IBrowser.class,String.class);
+            return constructor.newInstance(getBrowser(),location);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override

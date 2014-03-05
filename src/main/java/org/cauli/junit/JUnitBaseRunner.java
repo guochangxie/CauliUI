@@ -122,25 +122,4 @@ public class JUnitBaseRunner extends Feeder{
     }
 
 
-//    @Override
-//    protected List<FrameworkMethod> computeTestMethods() {
-//        List<FrameworkMethod> children = super.computeTestMethods();
-//        TestClass testClass = getTestClass();
-//        for (FrameworkMethod method : testClass.getAnnotatedMethods(Test.class)) {
-//            if(method.getMethod().isAnnotationPresent(Param.class)){
-//                Param param = method.getAnnotation(Param.class);
-//                String path = param.value();
-//                ParameterGenerator generator = new ParameterGenerator(new File(path));
-//                List<FrameworkMethodWithParameters> methods;
-//                try {
-//                    methods = generator.generator(method);
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                    throw new RuntimeException("初始化方法的时候出现了错误.."+method.getName());
-//                }
-//                children.addAll(methods);
-//            }
-//        }
-//        return children;
-//    }
 }

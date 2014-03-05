@@ -24,6 +24,7 @@ public class Select extends CauliElement {
 
     public Select(IBrowser browser, String location) {
         super(browser, location);
+        this.select=new org.openqa.selenium.support.ui.Select(getElement());
     }
 
 

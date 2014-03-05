@@ -3,6 +3,8 @@ package org.cauli.ui.selenium.page;
 
 import org.cauli.ui.selenium.browser.IBrowser;
 import org.cauli.ui.selenium.element.IElement;
+import org.cauli.ui.selenium.element.Select;
+import org.cauli.ui.selenium.element.Table;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +19,8 @@ import java.util.Map;
 public interface ICurrentPage extends IPage {
 
     public IBrowser getBrowser();
+
+    public Select select(String location);
 
     public void open(String url);
 
@@ -75,5 +79,7 @@ public interface ICurrentPage extends IPage {
 	void keypress(Keys key);
 
 	void release();
+
+    public Table table(String location);
 
 }

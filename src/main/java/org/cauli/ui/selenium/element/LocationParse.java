@@ -30,13 +30,18 @@ public class LocationParse {
                     return getLocationType(strs[0],strs[1]);
                 }
             }else{
-                Document document = Jsoup.parse(pageSource);
-                Element element = document.select(text).first();
-                if(element==null){
-                    return null;
-                }else{
-                    JSoupElement jSoupElement = new JSoupElement(element);
-                    return By.xpath(jSoupElement.toXpath());
+                try{
+                    Document document = Jsoup.parse(pageSource);
+                    Element element = document.select(text).first();
+                    if(element==null){
+                        return null;
+                    }else{
+                        JSoupElement jSoupElement = new JSoupElement(element);
+                        return By.xpath(jSoupElement.toXpath());
+                    }
+                }catch (Exception e){
+                    logger.error("请求的元素格式错误..请检查格式...",e);
+                    throw new RuntimeException(e);
                 }
             }
         }

@@ -2,6 +2,8 @@ package org.cauli.ui.selenium.browser;
 
 
 import org.cauli.ui.selenium.element.IElement;
+import org.cauli.ui.selenium.element.Select;
+import org.cauli.ui.selenium.element.Table;
 import org.cauli.ui.selenium.page.ICurrentPage;
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
@@ -95,6 +97,10 @@ public class Auto {
         browser().refresh();
     }
 
+    public static Select select(String location){
+        return browser().currentPage().select(location);
+    }
+
     public static void forward(){
         browser().forward();
     }
@@ -159,6 +165,10 @@ public class Auto {
 
     public static boolean remove(Browser browser){
         return browserSet.get().remove(browser);
+    }
+
+    public static Table table(String location){
+        return currentPage().table(location);
     }
 
 	@SuppressWarnings("unchecked")
