@@ -35,7 +35,6 @@ public class WindowsCollecter extends EventObject {
         if(handles.size()>this.windowNums){
             logger.info("窗口的句柄数增多，进行句柄收集操作, 初始化Handles Number->{}",windowNums);
             if(!isAlertHandle()){
-                String currentWindowHandle=browser.getCurrentBrowserDriver().getWindowHandle();
                 for(String windowhandle:handles){
                     if(this.windowhandles.contains(windowhandle)){
                         continue;

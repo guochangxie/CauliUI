@@ -1,6 +1,8 @@
 package org.cauli.test;
 
+import org.cauli.ui.annotation.Filter;
 import org.cauli.ui.annotation.Require;
+import org.cauli.ui.annotation.Tag;
 import org.cauli.ui.runner.CauliUIRunner;
 import org.cauli.ui.selenium.browser.Engine;
 import org.junit.Test;
@@ -50,8 +52,6 @@ public class BaseTest {
         Thread.sleep(1000);
         $("#all_online_card_list_ctn").find("className->btn_submit").click();
         quit();
-
-
     }
 
 

@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a96f342c-bb6b-4a04-a758-6c6431f60d88" name="Default" comment="" />
+    <list default="true" id="a96f342c-bb6b-4a04-a758-6c6431f60d88" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_dbcp2_2_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_dbunit_dbunit_2_4_9.xml" />
+      <change type="DELETED" beforePath="E:\ideal\CauliUI\.idea\libraries\Maven__org_apache_directory_studio_org_apache_commons_io_2_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ideal\CauliUI\.idea\libraries\Maven__org_slf4j_slf4j_nop_1_7_5.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org.cauli.test/BaseTest.java" afterPath="$PROJECT_DIR$/src/test/java/org.cauli.test/BaseTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CauliUI.iml" afterPath="$PROJECT_DIR$/CauliUI.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/cauli/ui/annotation/Filter.java" afterPath="$PROJECT_DIR$/src/main/java/org/cauli/ui/annotation/Filter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/WindowsCollecter.java" afterPath="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/WindowsCollecter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="E:\ideal\CauliUI\.idea\libraries\Maven__com_google_guava_guava_13_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_15_0.xml" />
+      <change type="MOVED" beforePath="E:\ideal\CauliUI\.idea\libraries\Maven__commons_io_commons_io_2_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_2.xml" />
+    </list>
     <ignored path="CauliUI.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,46 +80,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Element.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/Element.java">
+      <file leaf-file-name="BaseTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org.cauli.test/BaseTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="549" column="48" selection-start="17459" selection-end="17459" vertical-scroll-proportion="0.0" vertical-offset="11537" max-vertical-offset="12100">
-              <folding>
-                <element signature="e#8638#8639#0" expanded="false" />
-                <element signature="e#8668#8669#0" expanded="false" />
-                <element signature="e#8718#8719#0" expanded="false" />
-                <element signature="e#8744#8745#0" expanded="false" />
-                <element signature="e#14859#14860#0" expanded="false" />
-                <element signature="e#14889#14890#0" expanded="false" />
-                <element signature="e#14932#14933#0" expanded="false" />
-                <element signature="e#14966#14967#0" expanded="false" />
-                <element signature="e#15004#15005#0" expanded="false" />
-                <element signature="e#15039#15040#0" expanded="false" />
-                <element signature="e#15790#15800#0" expanded="false" />
-                <element signature="e#17184#17185#0" expanded="false" />
-                <element signature="e#17213#17214#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IElement.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/IElement.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="34" selection-start="373" selection-end="373" vertical-scroll-proportion="0.0" vertical-offset="63" max-vertical-offset="1276">
+            <state line="47" column="40" selection-start="1868" selection-end="1868" vertical-scroll-proportion="0.0" vertical-offset="1034" max-vertical-offset="1430">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Auto.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/Auto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="97" selection-start="2252" selection-end="2252" vertical-scroll-proportion="0.4965278" vertical-offset="1056" max-vertical-offset="4158">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4673#4703#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -111,57 +92,34 @@
       <file leaf-file-name="Feeder.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/Feeder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="253" column="71" selection-start="10083" selection-end="10083" vertical-scroll-proportion="0.0" vertical-offset="5003" max-vertical-offset="5566">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FrameworkMethod.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/org/junit/runners/model/FrameworkMethod.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="13" selection-start="612" selection-end="612" vertical-scroll-proportion="0.0" vertical-offset="410" max-vertical-offset="4202">
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#943#944#0" expanded="false" />
-                <element signature="e#973#974#0" expanded="false" />
-                <element signature="e#1317#1512#0" expanded="false" />
-                <element signature="e#1501#1502#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FrameworkMethodWithParameters.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/FrameworkMethodWithParameters.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="66" selection-start="1457" selection-end="1472" vertical-scroll-proportion="0.0" vertical-offset="77" max-vertical-offset="1122">
+            <state line="126" column="76" selection-start="5005" selection-end="5005" vertical-scroll-proportion="0.0" vertical-offset="2772" max-vertical-offset="6270">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParameterGenerator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/ParameterGenerator.java">
+      <file leaf-file-name="Filter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/annotation/Filter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="3" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="726">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#404#405#0" expanded="true" />
-                <element signature="e#431#432#0" expanded="true" />
-                <element signature="e#471#472#0" expanded="true" />
-                <element signature="e#503#504#0" expanded="true" />
-              </folding>
+            <state line="8" column="24" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="176" max-vertical-offset="418">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Engine.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/Engine.java">
+      <file leaf-file-name="LocationParse.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/LocationParse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="18" selection-start="488" selection-end="494" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1694">
+            <state line="45" column="77" selection-start="1590" selection-end="1590" vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="1496">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CauliElement.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/CauliElement.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="102" column="37" selection-start="3865" selection-end="3865" vertical-scroll-proportion="0.0" vertical-offset="2244" max-vertical-offset="13354">
               <folding />
             </state>
           </provider>
@@ -170,18 +128,43 @@
       <file leaf-file-name="Browser.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/Browser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="85" selection-start="460" selection-end="460" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7568">
-              <folding>
-                <element signature="e#747#774#0" expanded="true" />
-              </folding>
+            <state line="154" column="89" selection-start="5181" selection-end="5200" vertical-scroll-proportion="0.0" vertical-offset="3388" max-vertical-offset="8228">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParameterProvider.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/ParameterProvider.java">
+      <file leaf-file-name="WindowsCollecter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/WindowsCollecter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="67" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
+            <state line="16" column="104" selection-start="367" selection-end="367" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1848">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="21" selection-start="939" selection-end="939" vertical-scroll-proportion="0.57958287" vertical-offset="0" max-vertical-offset="3542">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Auto.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/Auto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="116" column="46" selection-start="3433" selection-end="3453" vertical-scroll-proportion="0.0" vertical-offset="2552" max-vertical-offset="4510">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IBrowser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/IBrowser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="24" selection-start="798" selection-end="798" vertical-scroll-proportion="0.0" vertical-offset="902" max-vertical-offset="1782">
               <folding />
             </state>
           </provider>
@@ -194,12 +177,14 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/ui/page/PageResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/page/PageResponse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/WindowsCollecter.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/listener/WindowSourceListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/cauli/junit/anno/Param.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/cauli/junit/PlatformDescriptor.java" />
@@ -207,30 +192,42 @@
         <option value="$PROJECT_DIR$/src/main/java/org/cauli/junit/PropertiesTools.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/cauli/junit/anno/Rule.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/RichTextField.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/page/ICurrentPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/JSoupElement.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/cauli/junit/statement/InterceptorStatement.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/cauli/junit/JUnitBaseRunner.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/Element.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/cauli/junit/ParameterGenerator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/cauli/junit/ParameterProvider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/cauli/junit/Feeder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/IElement.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/BaseBrowser.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/Brother.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/Brpwser.java" />
+        <option value="$PROJECT_DIR$/test.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/org/cauli/junit/RowParameter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/cauli/junit/ParameterGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/cauli/junit/ParameterProvider.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/cauli/junit/Feeder.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/Browser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/Engine.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/IElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/cauli/junit/JUnitBaseRunner.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/Select.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/page/ICurrentPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/page/CurrentPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/Auto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/Table.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/CauliElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/LocationParse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/annotation/Filter.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org.cauli.test/BaseTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/WindowsCollecter.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1358" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="784" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -258,7 +255,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -290,40 +287,8 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="CauliUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CauliUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CauliUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CauliUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -331,11 +296,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="cauli" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="selenium" />
+              <option name="myItemId" value="org.cauli.test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -354,120 +315,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cauli" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="selenium" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="element" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CauliUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CauliUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cauli" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="selenium" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="browser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CauliUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CauliUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cauli" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="junit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CauliUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CauliUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cauli" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="junit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anno" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -499,7 +346,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -512,6 +359,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="SearchEverywhereHistory" value="runChi&#10;RunR&#10;TestRu&#10;Rule" />
+    <property name="recentsLimit" value="5" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -519,7 +371,91 @@
       <recent name="E:\ideal\CauliUI\src\main\java\org\cauli\ui" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.BaseTest.testTwo">
+    <configuration default="false" name="BaseTest.testOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.cauli.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="CauliUI" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.cauli.test" />
+      <option name="MAIN_CLASS_NAME" value="org.cauli.test.BaseTest" />
+      <option name="METHOD_NAME" value="testOne" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="BaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.cauli.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="CauliUI" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.cauli.test" />
+      <option name="MAIN_CLASS_NAME" value="org.cauli.test.BaseTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="BaseTest.testTwo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.cauli.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="CauliUI" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.cauli.test" />
+      <option name="MAIN_CLASS_NAME" value="org.cauli.test.BaseTest" />
+      <option name="METHOD_NAME" value="testTwo" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <option name="name" value="Go application" />
       <option name="saveOutputToFile" value="false" />
@@ -694,25 +630,6 @@
       <option name="trusted" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="myFilePath" />
-      <option name="GLUE" />
-      <option name="myNameFilter" />
-      <option name="myGeneratedName" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="GoTestConfiguration" factoryName="Go Test">
       <option name="name" value="Go Test" />
       <option name="saveOutputToFile" value="false" />
@@ -732,6 +649,25 @@
       <option name="testBeforeBenchmark" value="false" />
       <option name="goVetEnabled" value="false" />
       <module name="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -768,55 +704,102 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <list size="0" />
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.BaseTest.testOne" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.BaseTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.BaseTest.testTwo" />
+    </list>
+    <recent_temporary>
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.BaseTest.testTwo" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.BaseTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.BaseTest.testOne" />
+      </list>
+    </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a96f342c-bb6b-4a04-a758-6c6431f60d88" name="Default" comment="" />
       <created>1393501943975</created>
       <updated>1393501943975</updated>
       <workItem from="1393501947723" duration="2889000" />
-      <workItem from="1393555271963" duration="8950000" />
+      <workItem from="1393555271963" duration="10252000" />
+      <workItem from="1393816188480" duration="2609000" />
+      <workItem from="1393903456022" duration="7066000" />
+      <workItem from="1393935122172" duration="2673000" />
+      <workItem from="1393986633927" duration="3399000" />
+      <workItem from="1393999128041" duration="690000" />
+      <workItem from="1394004112890" duration="10534000" />
+      <workItem from="1394073610258" duration="2506000" />
+      <workItem from="1394159998778" duration="2892000" />
+      <workItem from="1394419675836" duration="1283000" />
     </task>
+    <task id="LOCAL-00001" summary="修改了监听器的bug">
+      <created>1393935505315</created>
+      <updated>1393935505315</updated>
+    </task>
+    <task id="LOCAL-00002" summary="修改了一些bug&#10;">
+      <created>1394015491066</created>
+      <updated>1394015491066</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11839000" />
+    <option name="totallyTimeSpent" value="46793000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1382" height="784" extended-state="0" />
+    <frame x="1358" y="-8" width="1936" height="1096" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32765958" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32765958" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32800853" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287234" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25567323" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20255864" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28983957" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32800853" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32834226" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -832,430 +815,290 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="修改了监听器的bug" />
+    <MESSAGE value="修改了一些bug&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改了一些bug&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/2.39.0/selenium-api-2.39.0.jar!/org/openqa/selenium/WebDriver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="17" selection-start="166" selection-end="166" vertical-scroll-proportion="24.64" vertical-offset="726" max-vertical-offset="2684" />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/2.39.0/selenium-remote-driver-2.39.0-sources.jar!/org/openqa/selenium/remote/RemoteWebDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="19" selection-start="3326" selection-end="3335" vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="17886">
-          <folding>
-            <element signature="e#7288#7289#0" expanded="false" />
-            <element signature="e#7314#7315#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/2.39.0/selenium-remote-driver-2.39.0-sources.jar!/org/openqa/selenium/remote/SessionId.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="47" selection-start="853" selection-end="853" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="792" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/listener/ActionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="54" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.32490975" vertical-offset="1976" max-vertical-offset="2530" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/listener/ActionListenerProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="13" selection-start="424" selection-end="424" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="1584">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/listener/WindowSourceListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="248" column="41" selection-start="6991" selection-end="6991" vertical-scroll-proportion="0.0" vertical-offset="5211" max-vertical-offset="5742">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/WindowsCollectorListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="66" selection-start="438" selection-end="454" vertical-scroll-proportion="0.55595666" vertical-offset="0" max-vertical-offset="554">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/WindowsListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="17" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="462">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/WindowSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="26" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0" vertical-offset="40" max-vertical-offset="1320">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/jquery/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="541">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/WindowsCollecter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="68" selection-start="779" selection-end="779" vertical-scroll-proportion="0.0" vertical-offset="619" max-vertical-offset="2838">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/anno/ThreadRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="18" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/anno/Pict.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="23" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="506">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/databene/databene-benerator/0.7.7/databene-benerator-0.7.7.jar!/org/databene/benerator/DefaultPlatformDescriptor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="165" selection-end="165" vertical-scroll-proportion="0.21317829" vertical-offset="0" max-vertical-offset="516" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/scheduler/DefaultFeedScheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="72" selection-start="2129" selection-end="2129" vertical-scroll-proportion="0.48798522" vertical-offset="374" max-vertical-offset="1364">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/TestInfoProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="17" selection-start="1350" selection-end="1350" vertical-scroll-proportion="0.55595666" vertical-offset="0" max-vertical-offset="554">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/MyFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="142" selection-end="142" vertical-scroll-proportion="-0.079422385" vertical-offset="132" max-vertical-offset="7194">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/PropertiesTools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="294" column="68" selection-start="10023" selection-end="10023" vertical-scroll-proportion="0.20332718" vertical-offset="6336" max-vertical-offset="9262">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/PlatformDescriptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="65" selection-start="132" selection-end="157" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="440">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/commons/StringUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="62" selection-start="1368" selection-end="1368" vertical-scroll-proportion="0.40433213" vertical-offset="942" max-vertical-offset="1496">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/anno/Rule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="10" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="286">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/RichTextField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="41" selection-start="888" selection-end="888" vertical-scroll-proportion="0.29662523" vertical-offset="383" max-vertical-offset="946">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/page/ICurrentPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="39" selection-start="187" selection-end="187" vertical-scroll-proportion="-0.19097222" vertical-offset="220" max-vertical-offset="2200">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/ElementInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="73" selection-start="496" selection-end="496" vertical-scroll-proportion="0.19791667" vertical-offset="370" max-vertical-offset="946">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/source/XMLParse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="70" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.18363939" vertical-offset="440" max-vertical-offset="1408">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/JSoupElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="69" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="199" max-vertical-offset="2112">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/org/junit/Rule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="18" selection-start="2465" selection-end="2465" vertical-scroll-proportion="0.70617694" vertical-offset="1007" max-vertical-offset="1606">
-          <folding />
-        </state>
+        <state line="68" column="18" selection-start="2465" selection-end="2465" vertical-scroll-proportion="0.70617694" vertical-offset="1007" max-vertical-offset="1606" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/org/junit/rules/Timeout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="76" selection-start="672" selection-end="672" vertical-scroll-proportion="0.0" vertical-offset="512" max-vertical-offset="1122">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
+        <state line="30" column="76" selection-start="672" selection-end="672" vertical-scroll-proportion="0.0" vertical-offset="512" max-vertical-offset="1122" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/org/junit/runners/model/Statement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="33" selection-start="316" selection-end="324" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="440">
-          <folding />
-        </state>
+        <state line="13" column="33" selection-start="316" selection-end="324" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="440" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/org/junit/rules/TestRule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="78" selection-start="2174" selection-end="2174" vertical-scroll-proportion="0.27604166" vertical-offset="743" max-vertical-offset="1342">
-          <folding />
-        </state>
+        <state line="42" column="78" selection-start="2174" selection-end="2174" vertical-scroll-proportion="0.27604166" vertical-offset="743" max-vertical-offset="1342" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/org/junit/internal/runners/statements/InvokeMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="54" selection-start="315" selection-end="315" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="506">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
+        <state line="9" column="54" selection-start="315" selection-end="315" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="506" />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/jre/lib/deploy.jar!/com/sun/deploy/security/ruleset/RunRule.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="174" selection-end="174" vertical-scroll-proportion="0.19097222" vertical-offset="0" max-vertical-offset="968">
-          <folding />
-        </state>
+        <state line="6" column="13" selection-start="174" selection-end="174" vertical-scroll-proportion="0.19097222" vertical-offset="0" max-vertical-offset="968" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/org/junit/runner/Description.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="13" selection-start="1287" selection-end="1287" vertical-scroll-proportion="0.0" vertical-offset="292" max-vertical-offset="6688">
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#6569#6582#0" expanded="false" />
-            <element signature="e#7596#7597#0" expanded="false" />
-            <element signature="e#7631#7632#0" expanded="false" />
-            <element signature="e#7979#7980#0" expanded="false" />
-            <element signature="e#8011#8012#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="28" column="13" selection-start="1287" selection-end="1287" vertical-scroll-proportion="0.0" vertical-offset="292" max-vertical-offset="6688" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/org/junit/rules/RunRules.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="73" selection-start="321" selection-end="332" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="770">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/org/junit/runners/BlockJUnit4ClassRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="19" selection-start="2626" selection-end="2633" vertical-scroll-proportion="-6.5" vertical-offset="786" max-vertical-offset="8712">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/org/junit/runners/ParentRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="267" column="43" selection-start="10109" selection-end="10109" vertical-scroll-proportion="0.0" vertical-offset="5555" max-vertical-offset="7832">
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#9825#9826#0" expanded="false" />
-            <element signature="e#9858#9859#0" expanded="false" />
-            <element signature="e#12628#12639#0" expanded="false" />
-            <element signature="e#13245#13413#0" expanded="false" />
-            <element signature="e#13402#13403#0" expanded="false" />
-            <element signature="e#13630#13631#0" expanded="false" />
-            <element signature="e#13673#13674#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="13" column="73" selection-start="321" selection-end="332" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="770" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/org/junit/rules/RuleChain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="80" selection-start="2459" selection-end="2459" vertical-scroll-proportion="0.0" vertical-offset="1360" max-vertical-offset="2134">
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1100#1110#0" expanded="false" />
-            <element signature="e#2343#2353#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/JUnitBaseRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="55" selection-start="3704" selection-end="3704" vertical-scroll-proportion="0.0" vertical-offset="1782" max-vertical-offset="2728">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
+        <state line="83" column="80" selection-start="2459" selection-end="2459" vertical-scroll-proportion="0.0" vertical-offset="1360" max-vertical-offset="2134" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/anno/InterceptorClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="78" selection-start="120" selection-end="120" vertical-scroll-proportion="0.22916667" vertical-offset="0" max-vertical-offset="576">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/statement/InterceptorStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="47" selection-start="569" selection-end="569" vertical-scroll-proportion="0.0" vertical-offset="1285" max-vertical-offset="1848">
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#838#851#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="6" column="78" selection-start="120" selection-end="120" vertical-scroll-proportion="0.22916667" vertical-offset="0" max-vertical-offset="576" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/anno/Param.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="19" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="440">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/ParameterGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="3" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="726">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#404#405#0" expanded="true" />
-            <element signature="e#431#432#0" expanded="true" />
-            <element signature="e#471#472#0" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/ParameterProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="67" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/FrameworkMethodWithParameters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="66" selection-start="1457" selection-end="1472" vertical-scroll-proportion="0.0" vertical-offset="77" max-vertical-offset="1122">
-          <folding />
-        </state>
+        <state line="11" column="19" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="440" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/org/junit/runners/model/FrameworkMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="612" selection-end="612" vertical-scroll-proportion="0.0" vertical-offset="410" max-vertical-offset="4202">
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#943#944#0" expanded="false" />
-            <element signature="e#973#974#0" expanded="false" />
-            <element signature="e#1317#1512#0" expanded="false" />
-            <element signature="e#1501#1502#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="19" column="13" selection-start="612" selection-end="612" vertical-scroll-proportion="0.0" vertical-offset="410" max-vertical-offset="4202" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/Element.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="549" column="48" selection-start="17459" selection-end="17459" vertical-scroll-proportion="0.0" vertical-offset="11537" max-vertical-offset="12100">
-          <folding>
-            <element signature="e#8638#8639#0" expanded="false" />
-            <element signature="e#8668#8669#0" expanded="false" />
-            <element signature="e#8718#8719#0" expanded="false" />
-            <element signature="e#8744#8745#0" expanded="false" />
-            <element signature="e#14859#14860#0" expanded="false" />
-            <element signature="e#14889#14890#0" expanded="false" />
-            <element signature="e#14932#14933#0" expanded="false" />
-            <element signature="e#14966#14967#0" expanded="false" />
-            <element signature="e#15004#15005#0" expanded="false" />
-            <element signature="e#15039#15040#0" expanded="false" />
-            <element signature="e#15790#15800#0" expanded="false" />
-            <element signature="e#17184#17185#0" expanded="false" />
-            <element signature="e#17213#17214#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="558" column="0" selection-start="20137" selection-end="20137" vertical-scroll-proportion="0.33222592" vertical-offset="11570" max-vertical-offset="25410" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/IElement.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/RowParameter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="34" selection-start="373" selection-end="373" vertical-scroll-proportion="0.0" vertical-offset="63" max-vertical-offset="1276">
-          <folding />
-        </state>
+        <state line="12" column="42" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" vertical-offset="44" max-vertical-offset="660" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/FrameworkMethodWithParameters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="113" selection-start="2013" selection-end="2013" vertical-scroll-proportion="0.37132987" vertical-offset="379" max-vertical-offset="1122" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="63" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="176" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/ParameterProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="45" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/runner/CauliUIStatment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="11" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0" vertical-offset="269" max-vertical-offset="946" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/org/junit/runner/Request.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="36" selection-start="4786" selection-end="4795" vertical-scroll-proportion="2.5457685" vertical-offset="990" max-vertical-offset="3718" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/org/junit/internal/requests/FilterRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="48" selection-start="346" selection-end="353" vertical-scroll-proportion="0.0" vertical-offset="257" max-vertical-offset="902" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/ParameterGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="47" selection-start="606" selection-end="606" vertical-scroll-proportion="0.0" vertical-offset="115" max-vertical-offset="1760" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/org/junit/runners/BlockJUnit4ClassRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="38" selection-start="2973" selection-end="2984" vertical-scroll-proportion="0.0" vertical-offset="929" max-vertical-offset="8602" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/runner/CauliUIRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="55" selection-start="858" selection-end="873" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="814" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/org/junit/runners/ParentRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="258" column="27" selection-start="9810" selection-end="9810" vertical-scroll-proportion="0.0" vertical-offset="4515" max-vertical-offset="7634" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11-sources.jar!/org/junit/runner/manipulation/Filter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="107" selection-start="1230" selection-end="1230" vertical-scroll-proportion="-0.009633912" vertical-offset="731" max-vertical-offset="2794" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/Engine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="18" selection-start="488" selection-end="494" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1694">
+        <state line="46" column="86" selection-start="1351" selection-end="1351" vertical-scroll-proportion="0.0" vertical-offset="531" max-vertical-offset="1694" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/WindowsCollectorListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="13" selection-start="268" selection-end="268" vertical-scroll-proportion="0.5086705" vertical-offset="0" max-vertical-offset="550" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/JSoupElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="25" selection-start="1254" selection-end="1261" vertical-scroll-proportion="0.0" vertical-offset="870" max-vertical-offset="2068" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/TXTGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="67" selection-start="685" selection-end="685" vertical-scroll-proportion="0.4954955" vertical-offset="0" max-vertical-offset="888" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/ExcelGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="86" selection-start="738" selection-end="738" vertical-scroll-proportion="0.3963964" vertical-offset="66" max-vertical-offset="1034" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/FileGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="56" selection-start="174" selection-end="174" vertical-scroll-proportion="0.2725225" vertical-offset="0" max-vertical-offset="888" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/JUnitBaseRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="0" selection-start="4192" selection-end="4192" vertical-scroll-proportion="0.8018018" vertical-offset="1510" max-vertical-offset="2398" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/statement/InterceptorStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="11" selection-start="509" selection-end="509" vertical-scroll-proportion="0.22612514" vertical-offset="14" max-vertical-offset="1298" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/annotation/CauliRule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="40" selection-start="213" selection-end="213" vertical-scroll-proportion="0.26564217" vertical-offset="0" max-vertical-offset="911" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/annotation/Listener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="18" selection-start="202" selection-end="202" vertical-scroll-proportion="0.26564217" vertical-offset="0" max-vertical-offset="911" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/CauliFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="13" selection-start="267" selection-end="267" vertical-scroll-proportion="0.169045" vertical-offset="0" max-vertical-offset="911" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/Select.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="76" selection-start="821" selection-end="821" vertical-scroll-proportion="0.0" vertical-offset="264" max-vertical-offset="3630" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/page/ICurrentPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="16" selection-start="1840" selection-end="1845" vertical-scroll-proportion="0.0" vertical-offset="852" max-vertical-offset="1804" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/page/CurrentPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="384" column="21" selection-start="10963" selection-end="10963" vertical-scroll-proportion="0.0" vertical-offset="7430" max-vertical-offset="8360" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/Table.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="61" selection-start="1450" selection-end="1450" vertical-scroll-proportion="0.0" vertical-offset="792" max-vertical-offset="3608" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/Auto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="46" selection-start="3433" selection-end="3453" vertical-scroll-proportion="0.0" vertical-offset="1999" max-vertical-offset="4114">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/Browser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="85" selection-start="460" selection-end="460" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7568">
-          <folding>
-            <element signature="e#747#774#0" expanded="true" />
-          </folding>
+        <state line="154" column="89" selection-start="5181" selection-end="5200" vertical-scroll-proportion="0.0" vertical-offset="2813" max-vertical-offset="7590">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/annotation/Filter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="24" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/junit/Feeder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="253" column="71" selection-start="10083" selection-end="10083" vertical-scroll-proportion="0.0" vertical-offset="5003" max-vertical-offset="5566">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="126" column="76" selection-start="5005" selection-end="5005" vertical-scroll-proportion="0.0" vertical-offset="1474" max-vertical-offset="5126">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/Auto.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/org.cauli.test/BaseTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="97" selection-start="2252" selection-end="2252" vertical-scroll-proportion="0.4965278" vertical-offset="1056" max-vertical-offset="4158">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4673#4703#0" expanded="true" />
-          </folding>
+        <state line="47" column="40" selection-start="1868" selection-end="1868" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1276">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/IElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="20" selection-start="211" selection-end="211" vertical-scroll-proportion="-0.07296849" vertical-offset="220" max-vertical-offset="1298" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/CauliElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="37" selection-start="3865" selection-end="3865" vertical-scroll-proportion="0.0" vertical-offset="1650" max-vertical-offset="12914">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/element/LocationParse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="77" selection-start="1590" selection-end="1590" vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1320">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/IBrowser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="24" selection-start="798" selection-end="798" vertical-scroll-proportion="0.0" vertical-offset="679" max-vertical-offset="1694">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/cauli/ui/selenium/browser/WindowsCollecter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="104" selection-start="367" selection-end="367" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1848">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="21" selection-start="939" selection-end="939" vertical-scroll-proportion="0.57958287" vertical-offset="0" max-vertical-offset="3542">
+          <folding />
         </state>
       </provider>
     </entry>
