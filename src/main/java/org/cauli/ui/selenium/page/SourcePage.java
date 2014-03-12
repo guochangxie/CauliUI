@@ -9,6 +9,7 @@ import org.cauli.ui.annotation.Title;
 import org.cauli.ui.selenium.browser.Auto;
 import org.cauli.ui.selenium.browser.Browser;
 import org.cauli.ui.selenium.browser.Engine;
+import org.cauli.ui.selenium.browser.IBrowser;
 import org.cauli.ui.selenium.element.TempElement;
 
 import java.lang.reflect.Field;
@@ -40,6 +41,24 @@ public abstract class SourcePage extends CurrentPage {
         	if(!Auto.getCurrentBrowserDriver().getCurrentUrl().contains(this.getClass().getAnnotation(At.class).value())){
         		Auto.browser().selectWindowByTitle(this.getClass().getAnnotation(Title.class).value());
         	}
+        }
+        init();
+    }
+
+    public SourcePage(IBrowser browser){
+        setBrowser(browser);
+
+        if(this.getClass().isAnnotationPresent(Commit.class)){
+            this.pageCommit=this.getClass().getAnnotation(Commit.class).value();
+        }
+        if(this.getClass().isAnnotationPresent(At.class)){
+            if(!Auto.getCurrentBrowserDriver().getCurrentUrl().contains(this.getClass().getAnnotation(At.class).value())){
+                Auto.browser().selectWindowContainsUrl(this.getClass().getAnnotation(At.class).value());
+            }
+        }else if(this.getClass().isAnnotationPresent(Title.class)){
+            if(!Auto.getCurrentBrowserDriver().getCurrentUrl().contains(this.getClass().getAnnotation(At.class).value())){
+                Auto.browser().selectWindowByTitle(this.getClass().getAnnotation(Title.class).value());
+            }
         }
         init();
     }
