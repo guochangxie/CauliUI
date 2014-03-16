@@ -18,7 +18,7 @@ import java.util.Set;
  */
 public class Auto {
 
-    private static Object page;
+    private static ICurrentPage currentPage;
     public static ThreadLocal<Set<Engine>> browserSet=new ThreadLocal<Set<Engine>>(){
         public Set<Engine> initialValue(){
             return new HashSet<Engine>();
@@ -71,11 +71,16 @@ public class Auto {
     public static IBrowser browser(){
         return local.get().getBrowser();
     }
+
     public static ICurrentPage go(String url){
         return browser().open(url);
     }
     public static IElement $(String jquery){
     	return browser().currentPage().$(jquery);
+    }
+
+    public void to(ICurrentPage page){
+
     }
 
     public static void maxWindow(){
@@ -171,11 +176,10 @@ public class Auto {
         return currentPage().table(location);
     }
 
-	@SuppressWarnings("unchecked")
 	public static <T> T page(Class<T> clazz) {
-        Auto.page=null;
         try {
-            page=Class.forName(clazz.getName()).newInstance();
+            T page= (T) Class.forName(clazz.getName()).newInstance();
+            return page;
         } catch (InstantiationException e) {
             e.printStackTrace();
             throw new RuntimeException("没有找到这个class类"+clazz.getName()+",请检查类是否被加载或者类名是否正确");
@@ -184,7 +188,6 @@ public class Auto {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("没有找到这个class类"+clazz.getName()+",请检查类是否被加载或者类名是否正确");
         }
-        return (T)page;
     }
 
     public static void pageLoadTimeout(int seconds){
