@@ -1,6 +1,7 @@
 package org.cauli.ui.selenium.browser;
 
 import org.cauli.ui.selenium.page.ICurrentPage;
+import org.cauli.ui.selenium.page.Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -70,6 +71,8 @@ public interface IBrowser {
     public void openNew(String url);
 
     public boolean isUseJQuery();
+
+    public Page page();
 
 
 }

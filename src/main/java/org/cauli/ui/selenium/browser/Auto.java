@@ -18,7 +18,6 @@ import java.util.Set;
  */
 public class Auto {
 
-    private static ICurrentPage currentPage;
     public static ThreadLocal<Set<Engine>> browserSet=new ThreadLocal<Set<Engine>>(){
         public Set<Engine> initialValue(){
             return new HashSet<Engine>();
@@ -79,9 +78,6 @@ public class Auto {
     	return browser().currentPage().$(jquery);
     }
 
-    public void to(ICurrentPage page){
-
-    }
 
     public static void maxWindow(){
         browser().maxWindow();

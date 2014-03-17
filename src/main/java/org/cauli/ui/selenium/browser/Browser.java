@@ -2,8 +2,8 @@ package org.cauli.ui.selenium.browser;
 
 import org.apache.commons.io.FileUtils;
 import org.cauli.ui.selenium.listener.ActionListenerProxy;
-import org.cauli.ui.selenium.page.CurrentPage;
 import org.cauli.ui.selenium.page.ICurrentPage;
+import org.cauli.ui.selenium.page.Page;
 import org.openqa.selenium.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +15,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -29,13 +28,13 @@ public class Browser implements IBrowser {
     private boolean isUseJQuery=false;
     private WindowsCollectorListener windowsCollectorListener;
     private WindowSource windowSource;
-    private ICurrentPage currentPage;
+    private Page page;
     private WebDriver driver;
     public Browser(Engine browser){
         this.driver=browser.browser();
         maxWindow();
         this.driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
-        this.currentPage=new CurrentPage(this);
+        this.page=new Page(this);
         this.windowSource=new WindowSource(this);
         this.windowsCollectorListener=new WindowsCollectorListener();
         this.windowSource.addWindowsListener(this.windowsCollectorListener);
@@ -51,7 +50,7 @@ public class Browser implements IBrowser {
         }
         maxWindow();
         this.driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
-        this.currentPage=new CurrentPage(this);
+        this.page=new Page(this);
         this.windowSource=new WindowSource(this);
         this.windowsCollectorListener=new WindowsCollectorListener();
         this.windowSource.addWindowsListener(this.windowsCollectorListener);
@@ -64,12 +63,12 @@ public class Browser implements IBrowser {
         this.getCurrentBrowserDriver().get(url);
         this.setClosed(false);
         //logger.info("打开了http地址"+url);
-        this.currentPage.setBrowser(this);
+        this.page.setBrowser(this);
         this.windowSource.windowsCheck();
-        logger.info("当前初始化页面信息：URL--->"+this.currentPage().getUrl());
-        logger.info("当前初始化页面信息：Title--->"+this.currentPage().getTitle());
+        logger.info("当前初始化页面信息：URL--->"+this.page().getUrl());
+        logger.info("当前初始化页面信息：Title--->"+this.page().getTitle());
         logger.info("当前初始化页面信息：窗口句柄数--->"+this.getWindows().size());
-        return this.currentPage;
+        return this.page;
     }
 
     @Override
@@ -123,29 +122,29 @@ public class Browser implements IBrowser {
     @Override
     public ICurrentPage selectDefaultWindow() {
         this.driver.switchTo().defaultContent();
-        this.currentPage.setBrowser(this);
-        return this.currentPage;
+        this.page.setBrowser(this);
+        return this.page;
     }
 
     @Override
     public ICurrentPage selectFrame(By by) {
         this.driver.switchTo().frame(this.driver.findElement(by));
-        this.currentPage.setBrowser(this);
-        return this.currentPage;
+        this.page.setBrowser(this);
+        return this.page;
     }
 
     @Override
     public ICurrentPage selectFrame(int index) {
         this.driver.switchTo().frame(index);
-        this.currentPage.setBrowser(this);
-        return this.currentPage;
+        this.page.setBrowser(this);
+        return this.page;
     }
 
     @Override
     public ICurrentPage selectFrame(By by, int index) {
         this.driver.switchTo().frame(this.driver.findElements(by).get(index));
-        this.currentPage.setBrowser(this);
-        return this.currentPage;
+        this.page.setBrowser(this);
+        return this.page;
     }
 
     @Override
@@ -154,12 +153,12 @@ public class Browser implements IBrowser {
         this.windowSource.getWindowsCollecter().updateWindows();
         String windowhandle = this.windowSource.getWindowsCollecter().getLastWindowhandle();
         this.driver.switchTo().window(windowhandle);
-        this.currentPage.setBrowser(this);
+        this.page.setBrowser(this);
         ActionListenerProxy.getDispatcher().afterselectWindow();
-        logger.info("当前页面信息：URL--->"+this.currentPage().getUrl());
-        logger.info("当前页面信息：Title--->"+this.currentPage().getTitle());
+        logger.info("当前页面信息：URL--->"+this.page().getUrl());
+        logger.info("当前页面信息：Title--->"+this.page().getTitle());
         logger.info("当前页面信息：窗口句柄数--->"+this.getWindows().size());
-        return this.currentPage;
+        return this.page;
     }
 
     @Override
@@ -176,11 +175,11 @@ public class Browser implements IBrowser {
         }
         logger.info("当前页面切换到了-------->" + title);
         ActionListenerProxy.getDispatcher().afterselectWindow();
-        this.currentPage.setBrowser(this);
-        logger.info("当前页面信息：URL--->"+this.currentPage().getUrl());
-        logger.info("当前页面信息：Title--->"+this.currentPage().getTitle());
+        this.page.setBrowser(this);
+        logger.info("当前页面信息：URL--->"+this.page().getUrl());
+        logger.info("当前页面信息：Title--->"+this.page().getTitle());
         logger.info("当前页面信息：窗口句柄数--->"+this.getWindows().size());
-        return this.currentPage;
+        return this.page;
     }
 
     @Override
@@ -196,11 +195,11 @@ public class Browser implements IBrowser {
             }
         }
         ActionListenerProxy.getDispatcher().afterselectWindow();
-        this.currentPage.setBrowser(this);
-        logger.info("当前页面信息：URL--->"+this.currentPage().getUrl());
-        logger.info("当前页面信息：Title--->"+this.currentPage().getTitle());
+        this.page.setBrowser(this);
+        logger.info("当前页面信息：URL--->"+this.page().getUrl());
+        logger.info("当前页面信息：Title--->"+this.page().getTitle());
         logger.info("当前页面信息：窗口句柄数--->"+this.getWindows().size());
-        return this.currentPage;
+        return this.page;
     }
 
     public ICurrentPage selectWindowByIndex(Integer index) {
@@ -208,11 +207,11 @@ public class Browser implements IBrowser {
         String windowhandle=this.windowSource.getWindowsCollecter().getWindowhandleByIndex(index);
         this.driver.switchTo().window(windowhandle);
         logger.info("当前页面切换到了-------->" + this.driver.getTitle());
-        this.currentPage.setBrowser(this);
-        logger.info("当前页面信息：URL--->"+this.currentPage().getUrl());
-        logger.info("当前页面信息：Title--->"+this.currentPage().getTitle());
+        this.page.setBrowser(this);
+        logger.info("当前页面信息：URL--->"+this.page().getUrl());
+        logger.info("当前页面信息：Title--->"+this.page().getTitle());
         logger.info("当前页面信息：窗口句柄数--->"+this.getWindows().size());
-        return this.currentPage;
+        return this.page;
     }
 
     @Override
@@ -227,18 +226,24 @@ public class Browser implements IBrowser {
                 break;
             }
         }
-        this.currentPage.setBrowser(this);
-        logger.info("当前页面信息：URL--->"+this.currentPage().getUrl());
-        logger.info("当前页面信息：Title--->"+this.currentPage().getTitle());
+        this.page.setBrowser(this);
+        logger.info("当前页面信息：URL--->"+this.page().getUrl());
+        logger.info("当前页面信息：Title--->"+this.page().getTitle());
         logger.info("当前页面信息：窗口句柄数--->"+this.getWindows().size());
         ActionListenerProxy.getDispatcher().afterselectWindow();
-        return this.currentPage;
+        return this.page;
     }
 
     @Override
     public ICurrentPage currentPage() {
-        this.currentPage.setBrowser(this);
-        return this.currentPage;  //To change body of implemented methods use File | Settings | File Templates.
+        this.page.setBrowser(this);
+        return this.page;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public Page page() {
+        this.page.setBrowser(this);
+        return this.page;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     @Override
@@ -354,11 +359,11 @@ public class Browser implements IBrowser {
         }
         logger.info("当前页面切换到了-------->" + title);
         ActionListenerProxy.getDispatcher().afterselectWindow();
-        this.currentPage.setBrowser(this);
-        logger.info("当前页面信息：URL--->"+this.currentPage().getUrl());
-        logger.info("当前页面信息：Title--->"+this.currentPage().getTitle());
+        this.page.setBrowser(this);
+        logger.info("当前页面信息：URL--->"+this.page().getUrl());
+        logger.info("当前页面信息：Title--->"+this.page().getTitle());
         logger.info("当前页面信息：窗口句柄数--->"+this.getWindows().size());
-        return this.currentPage;
+        return this.page;
 	}
 
 

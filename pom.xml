@@ -4,6 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+
     <groupId>CauliUI</groupId>
     <artifactId>CauliUI</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -134,23 +139,54 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9</version>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
                 <configuration>
-                    <encoding>UTF-8</encoding>
-                    <docencoding>UTF-8</docencoding>
+                    <!--<encoding>UTF-8</encoding>-->
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>3.3</version>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9</version>
                 <configuration>
-                    <locales>en_US</locales>
-                    <outputEncoding>UTF-8</outputEncoding>
+                    <stylesheet>maven</stylesheet>
+                    <aggregate>true</aggregate>
+                    <charset>UTF-8</charset>
+                    <encoding>UTF-8</encoding>
+                    <docencoding>UTF-8</docencoding>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
+    <distributionManagement>
+        <repository>
+            <id>qa_nexus</id>
+            <name>Release</name>
+            <url>http://192.168.250.238:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>qa_nexus</id>
+            <name>SNAPSHOT</name>
+            <url>http://192.168.250.238:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>

@@ -1,6 +1,7 @@
 package org.cauli.ui.selenium.browser;
 
 import org.cauli.ui.selenium.page.ICurrentPage;
+import org.cauli.ui.selenium.page.Page;
 
 import java.lang.reflect.*;
 

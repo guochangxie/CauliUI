@@ -10,11 +10,11 @@ import static org.cauli.ui.selenium.browser.Auto.*;
 /**
  * Created by celeskyking on 14-3-1
  */
-@RunWith(CauliUIRunner.class)
+//@RunWith(CauliUIRunner.class)
 public class BaseTest {
 
 
-    @Test
+    //@Test
     //@Param("test.txt")
     public void testOne() throws InterruptedException {
         require(Engine.FIREFOX);
@@ -27,7 +27,7 @@ public class BaseTest {
     }
 
 
-    @Test
+    //@Test
     @Require(Engine.FIREFOX)
     public void testTwo() throws InterruptedException {
         go("http://l-payserver12.pay.beta.cn6.qunar.com/pay/API/TestPage.php");
